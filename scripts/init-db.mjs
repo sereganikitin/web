@@ -82,7 +82,7 @@ const defaults = {
 
   "hero.eyebrow": "LIVE PREVIEW",
   "hero.title_line1": "Веб-разработчик",
-  "hero.title_line2": "& дизайнер",
+  "hero.title_line2": "Frontend & backend",
   "hero.subtitle":
     "Frontend и backend разработка, создание сайтов любой сложности — от лендингов до интернет-магазинов.",
   "hero.cta_label": "Мои услуги",
@@ -135,10 +135,10 @@ if (portfolioCount.c === 0) {
     "INSERT INTO portfolio (slug, title, category, description, image, link, position) VALUES (?, ?, ?, ?, ?, ?, ?)"
   );
   const samples = [
-    ["space", "Space", "Веб-дизайн", "Лендинг для технологического стартапа.", null, null, 1],
-    ["nova", "Nova", "Веб-дизайн", "Корпоративный сайт с админкой и блогом.", null, null, 2],
+    ["space", "Space", "Лендинг", "Лендинг для технологического стартапа.", null, null, 1],
+    ["nova", "Nova", "Корпоративный сайт", "Корпоративный сайт с админкой и блогом.", null, null, 2],
     ["sonic", "Sonic", "Интернет-магазин", "E-commerce с интеграцией платежей.", null, null, 3],
-    ["solar", "Solar", "Веб-дизайн", "Промо-сайт продукта с анимациями.", null, null, 4],
+    ["solar", "Solar", "Промо-сайт", "Промо-сайт продукта с анимациями.", null, null, 4],
   ];
   for (const s of samples) insert.run(...s);
 }

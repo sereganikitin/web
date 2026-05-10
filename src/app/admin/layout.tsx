@@ -8,6 +8,7 @@ const nav = [
   { href: "/admin/portfolio", label: "Портфолио" },
   { href: "/admin/logos", label: "Логотипы клиентов" },
   { href: "/admin/contacts", label: "Контакты" },
+  { href: "/admin/account", label: "Аккаунт" },
 ];
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {

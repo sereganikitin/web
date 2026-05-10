@@ -127,7 +127,7 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
           <input
             value={v.category}
             onChange={(e) => set("category", e.target.value)}
-            placeholder="Веб-дизайн / Интернет-магазин / Лендинг"
+            placeholder="Лендинг / Корпоративный сайт / Интернет-магазин"
             className="input"
           />
         </Field>

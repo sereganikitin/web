@@ -58,5 +58,10 @@ export function verifyCredentials(login: string, password: string): AdminUser | 
   return user;
 }
 
+export function updatePassword(userId: number, newPassword: string): void {
+  const hash = bcrypt.hashSync(newPassword, 10);
+  db.prepare("UPDATE admin_users SET password_hash = ? WHERE id = ?").run(hash, userId);
+}
+
 export const SESSION_COOKIE = COOKIE_NAME;
 export { SECRET as SESSION_SECRET };
