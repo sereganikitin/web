@@ -6,6 +6,7 @@ set -euo pipefail
 REPO="${REPO:-https://github.com/sereganikitin/web.git}"
 TARGET="${TARGET:-/var/www/web.cd-agency.ru}"
 APP_NAME="web-cd-agency"
+APP_PORT=3002  # 3000 занят cd-agency.service, 3001 — photo.cd-agency.ru
 
 echo "▸ bootstrap: repo=$REPO target=$TARGET"
 
@@ -75,10 +76,10 @@ npm run build
 echo "▸ pm2: clean restart"
 pm2 delete "$APP_NAME" 2>/dev/null || true
 if command -v fuser >/dev/null 2>&1; then
-  fuser -k 3000/tcp 2>/dev/null || true
+  fuser -k "${APP_PORT}/tcp" 2>/dev/null || true
 fi
 sleep 1
-pm2 start node_modules/next/dist/bin/next --name "$APP_NAME" -- start -p 3000
+pm2 start node_modules/next/dist/bin/next --name "$APP_NAME" -- start -p "$APP_PORT"
 pm2 save
 
 echo ""

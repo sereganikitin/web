@@ -5,7 +5,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 APP_NAME="web-cd-agency"
-APP_PORT=3000
+APP_PORT=3002  # 3000 занят cd-agency.service, 3001 — photo.cd-agency.ru
 
 echo "▸ deploy: $(pwd)"
 
