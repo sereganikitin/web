@@ -3,11 +3,12 @@ import { db, type Lead } from "./db";
 
 export function listLeads(opts: { limit?: number } = {}): Lead[] {
   const limit = opts.limit && opts.limit > 0 ? Math.min(opts.limit, 500) : 200;
-  return db
+  const rows = db
     .prepare(
       `SELECT * FROM leads ORDER BY created_at DESC, id DESC LIMIT ?`
     )
     .all(limit) as Lead[];
+  return rows.map((r) => ({ ...r }));
 }
 
 export function countUnreadLeads(): number {
