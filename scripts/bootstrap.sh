@@ -71,14 +71,14 @@ npm run db:init
 echo "▸ build"
 npm run build
 
-# 5. PM2 (clean restart: убираем процесс и любые хвосты на порту 3000)
+# 5. PM2 (clean restart: запускаем next напрямую, без npm-обёртки)
 echo "▸ pm2: clean restart"
 pm2 delete "$APP_NAME" 2>/dev/null || true
 if command -v fuser >/dev/null 2>&1; then
   fuser -k 3000/tcp 2>/dev/null || true
 fi
 sleep 1
-pm2 start npm --name "$APP_NAME" -- start
+pm2 start node_modules/next/dist/bin/next --name "$APP_NAME" -- start -p 3000
 pm2 save
 
 echo ""

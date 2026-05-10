@@ -25,15 +25,16 @@ npm run db:init
 echo "▸ build"
 npm run build
 
-# Чистый перезапуск: pm2 restart на npm-обёртке оставляет orphan next-server,
-# который держит порт. Поэтому удаляем процесс целиком и убиваем хвосты на порту.
+# Чистый перезапуск. Запускаем next напрямую (а не через npm),
+# иначе pm2 управляет npm-обёрткой, а её дочерний next-server остаётся
+# orphan'ом при рестарте и держит порт → EADDRINUSE.
 echo "▸ pm2: clean restart"
 pm2 delete "$APP_NAME" 2>/dev/null || true
 if command -v fuser >/dev/null 2>&1; then
   fuser -k "${APP_PORT}/tcp" 2>/dev/null || true
 fi
 sleep 1
-pm2 start npm --name "$APP_NAME" -- start
+pm2 start node_modules/next/dist/bin/next --name "$APP_NAME" -- start -p "$APP_PORT"
 pm2 save
 
 echo "✓ deploy ok"
