@@ -16,8 +16,13 @@ fi
 # shellcheck disable=SC1091
 [ -s "${NVM_DIR:-}/nvm.sh" ] && . "${NVM_DIR}/nvm.sh"
 
-echo "▸ npm ci"
-npm ci --no-audit --no-fund
+echo "▸ npm install"
+# npm ci быстрее, но требует строгой синхронизации package-lock.json с package.json.
+# Если лок устарел (например, dep добавлен без локального npm install) — фолбэк на npm install.
+if ! npm ci --no-audit --no-fund 2>/dev/null; then
+  echo "  (lock out of sync — falling back to npm install)"
+  npm install --no-audit --no-fund
+fi
 
 echo "▸ db:init (миграции идемпотентны)"
 npm run db:init

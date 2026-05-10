@@ -4,6 +4,7 @@ import { readSession } from "@/lib/auth";
 
 const nav = [
   { href: "/admin", label: "Дашборд" },
+  { href: "/admin/leads", label: "Заявки" },
   { href: "/admin/content", label: "Тексты" },
   { href: "/admin/portfolio", label: "Портфолио" },
   { href: "/admin/logos", label: "Логотипы клиентов" },

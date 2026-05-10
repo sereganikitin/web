@@ -61,3 +61,13 @@ export type AdminUser = {
   login: string;
   password_hash: string;
 };
+
+export type Lead = {
+  id: number;
+  name: string;
+  contact: string;
+  message: string;
+  source: "contacts" | "popup" | string;
+  is_read: number;
+  created_at: string;
+};

@@ -1,3 +1,5 @@
+import LeadForm from "./LeadForm";
+
 type Props = {
   eyebrow: string;
   title: string;
@@ -52,6 +54,23 @@ export default function Contacts(p: Props) {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        <div className="mt-14 grid gap-10 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <div className="eyebrow mb-4">Форма</div>
+            <h3 className="font-serif text-2xl md:text-3xl">
+              Напишите <span className="italic text-accent">мне</span>
+            </h3>
+            <p className="mt-4 max-w-md text-sm text-text-muted">
+              Расскажите о задаче — отвечу в течение дня.
+            </p>
+          </div>
+          <div className="md:col-span-7">
+            <div className="rounded-2xl border border-text/5 bg-bg-card p-6 md:p-8">
+              <LeadForm source="contacts" variant="inline" />
+            </div>
           </div>
         </div>
       </div>

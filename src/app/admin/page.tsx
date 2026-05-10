@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { listPortfolio } from "@/lib/content";
+import { countUnreadLeads } from "@/lib/leads";
 
 export const dynamic = "force-dynamic";
 
 export default function AdminDashboard() {
   const portfolio = listPortfolio();
+  const unread = countUnreadLeads();
   const cards = [
+    {
+      href: "/admin/leads",
+      title: unread > 0 ? `Заявки (${unread} новых)` : "Заявки",
+      desc: "Сообщения из контактной формы и попапа.",
+    },
     {
       href: "/admin/content",
       title: "Тексты сайта",

@@ -63,6 +63,17 @@ CREATE TABLE IF NOT EXISTS admin_users (
   login         TEXT NOT NULL UNIQUE,
   password_hash TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS leads (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  name       TEXT NOT NULL DEFAULT '',
+  contact    TEXT NOT NULL DEFAULT '',
+  message    TEXT NOT NULL DEFAULT '',
+  source     TEXT NOT NULL DEFAULT 'contacts',
+  is_read    INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_leads_created_at ON leads (created_at DESC);
 `);
 
 // Migrations: add columns introduced after the initial schema (idempotent).

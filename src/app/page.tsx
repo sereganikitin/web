@@ -6,6 +6,7 @@ import SelectedWork from "@/components/SelectedWork";
 import About from "@/components/About";
 import Contacts from "@/components/Contacts";
 import Footer from "@/components/Footer";
+import PopupCTA from "@/components/PopupCTA";
 import { getContent, listLogos, listPortfolio } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
@@ -72,6 +73,7 @@ export default function HomePage() {
         />
       </main>
       <Footer copy={c["footer.copy"] ?? "© Сергей Никитин"} />
+      <PopupCTA />
     </>
   );
 }
