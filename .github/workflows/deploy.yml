@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Trigger deploy on VPS
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: cd-agency.ru
+          username: root
+          port: 22
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: true
+          command_timeout: 10m
+          script: |
+            set -euo pipefail
+            cd /var/www/web.cd-agency.ru
+            git fetch --quiet origin main
+            git reset --hard origin/main
+            chmod +x scripts/deploy.sh
+            ./scripts/deploy.sh
