@@ -4,6 +4,9 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
+APP_NAME="web-cd-agency"
+APP_PORT=3000
+
 echo "▸ deploy: $(pwd)"
 
 # Если на сервере используется nvm, прогружаем его (для cron/CI без логин-shell)
@@ -22,12 +25,15 @@ npm run db:init
 echo "▸ build"
 npm run build
 
-echo "▸ pm2 restart"
-if pm2 describe web-cd-agency >/dev/null 2>&1; then
-  pm2 restart web-cd-agency --update-env
-else
-  pm2 start npm --name web-cd-agency -- start
+# Чистый перезапуск: pm2 restart на npm-обёртке оставляет orphan next-server,
+# который держит порт. Поэтому удаляем процесс целиком и убиваем хвосты на порту.
+echo "▸ pm2: clean restart"
+pm2 delete "$APP_NAME" 2>/dev/null || true
+if command -v fuser >/dev/null 2>&1; then
+  fuser -k "${APP_PORT}/tcp" 2>/dev/null || true
 fi
+sleep 1
+pm2 start npm --name "$APP_NAME" -- start
 pm2 save
 
 echo "✓ deploy ok"

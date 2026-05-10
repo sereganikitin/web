@@ -71,14 +71,14 @@ npm run db:init
 echo "▸ build"
 npm run build
 
-# 5. PM2
-if pm2 describe "$APP_NAME" >/dev/null 2>&1; then
-  echo "▸ pm2 restart $APP_NAME"
-  pm2 restart "$APP_NAME" --update-env
-else
-  echo "▸ pm2 start $APP_NAME"
-  pm2 start npm --name "$APP_NAME" -- start
+# 5. PM2 (clean restart: убираем процесс и любые хвосты на порту 3000)
+echo "▸ pm2: clean restart"
+pm2 delete "$APP_NAME" 2>/dev/null || true
+if command -v fuser >/dev/null 2>&1; then
+  fuser -k 3000/tcp 2>/dev/null || true
 fi
+sleep 1
+pm2 start npm --name "$APP_NAME" -- start
 pm2 save
 
 echo ""
