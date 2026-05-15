@@ -23,7 +23,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "некорректный URL" }, { status: 400 });
   }
 
-  // Microlink free API — без ключа лимиты ~50 req/day/IP, кешируется ими по URL
+  // Microlink free API — без ключа лимиты ~50 req/day/IP, кешируется ими по URL.
+  // waitUntil=networkidle0 + waitFor=4000ms — даём странице догрузить шрифты,
+  // картинки и hero-анимации перед снимком.
   const microUrl =
     "https://api.microlink.io?" +
     new URLSearchParams({
@@ -32,20 +34,23 @@ export async function POST(req: Request) {
       meta: "false",
       "viewport.width": "1440",
       "viewport.height": "900",
-      waitUntil: "networkidle2",
+      "viewport.deviceScaleFactor": "1",
+      waitUntil: "networkidle0",
+      waitFor: "4000",
       fullPage: "false",
       type: "png",
+      timeout: "45000",
     }).toString();
 
   let metaRes: Response;
   try {
     metaRes = await fetch(microUrl, {
-      signal: AbortSignal.timeout(30_000),
+      signal: AbortSignal.timeout(60_000),
       headers: { accept: "application/json" },
     });
   } catch {
     return NextResponse.json(
-      { error: "сервис скриншотов не ответил за 30 секунд" },
+      { error: "сервис скриншотов не ответил за минуту" },
       { status: 504 }
     );
   }

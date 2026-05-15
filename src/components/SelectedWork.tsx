@@ -71,7 +71,6 @@ export default function SelectedWork({
                     href={p.link}
                     target="_blank"
                     rel="noreferrer noopener"
-                    onClick={(e) => e.stopPropagation()}
                     className="absolute right-4 top-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-text/10 bg-bg/60 text-text-muted backdrop-blur transition hover:border-accent hover:text-accent"
                     title="Открыть сайт проекта"
                   >
