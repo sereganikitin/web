@@ -66,7 +66,7 @@ export default function SelectedWork({
                       </div>
                     )}
                   </div>
-                  <div className="rounded-full border border-text/10 bg-bg/60 px-3 py-1 text-[10px] uppercase tracking-wider text-text-muted">
+                  <div className="rounded-full border border-accent/60 bg-bg/60 px-3 py-1 text-[10px] uppercase tracking-wider text-accent">
                     {p.category}
                   </div>
                 </div>
