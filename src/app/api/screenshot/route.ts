@@ -32,7 +32,7 @@ export async function POST(req: Request) {
       url: targetUrl,
       screenshot: "true",
       meta: "false",
-      "viewport.width": "1440",
+      "viewport.width": "1600",
       "viewport.height": "900",
       "viewport.deviceScaleFactor": "1",
       waitUntil: "networkidle0",
