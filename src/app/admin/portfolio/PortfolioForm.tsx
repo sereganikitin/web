@@ -24,6 +24,7 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
   const isEdit = typeof initial.id === "number";
   const [v, setV] = useState<PortfolioFormItem>({ ...initial });
   const [busy, setBusy] = useState(false);
+  const [shooting, setShooting] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
   function set<K extends keyof PortfolioFormItem>(k: K, val: PortfolioFormItem[K]) {
@@ -45,6 +46,31 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
   async function uploadCover(file: File) {
     const url = await uploadFile(file);
     if (url) set("image", url);
+  }
+
+  async function captureScreenshot() {
+    const url = (v.link ?? "").trim();
+    if (!url) {
+      setErr("Сначала укажите ссылку на сайт проекта");
+      return;
+    }
+    setErr(null);
+    setShooting(true);
+    try {
+      const r = await fetch("/api/screenshot", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ url }),
+      });
+      const data = await r.json().catch(() => ({}));
+      if (!r.ok) {
+        setErr(data.error || "Не удалось получить скриншот");
+        return;
+      }
+      set("image", data.url);
+    } finally {
+      setShooting(false);
+    }
   }
 
   async function addToGallery(files: FileList) {
@@ -171,7 +197,7 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
 
       <Section title="Обложка">
         <Field label="Изображение карточки и шапки детальной страницы">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {v.image && (
               // eslint-disable-next-line @next/next/no-img-element
               <img
@@ -199,6 +225,20 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
                 очистить
               </button>
             )}
+          </div>
+          <div className="mt-3 flex items-center gap-3">
+            <button
+              type="button"
+              onClick={captureScreenshot}
+              disabled={shooting || !v.link?.trim()}
+              className="rounded-full border border-text/15 px-4 py-2 text-xs text-text-muted transition hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-text/15 disabled:hover:text-text-muted"
+              title={!v.link?.trim() ? "Сначала укажите ссылку на проект выше" : "Сделать скриншот страницы по ссылке"}
+            >
+              {shooting ? "Делаю скриншот..." : "📷 Скриншот по ссылке"}
+            </button>
+            <span className="text-xs text-text-dim">
+              Подтянет превью страницы и поставит как обложку.
+            </span>
           </div>
         </Field>
       </Section>
