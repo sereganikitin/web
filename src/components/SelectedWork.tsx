@@ -36,12 +36,21 @@ export default function SelectedWork({
                 className="group relative aspect-video overflow-hidden rounded-2xl border border-text/5 bg-bg-card"
               >
                 {p.image ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={p.image}
-                    alt={p.title}
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                  />
+                  <div className="absolute inset-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.image}
+                      alt=""
+                      aria-hidden
+                      className="absolute inset-0 h-full w-full scale-110 object-cover opacity-60 blur-2xl"
+                    />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="relative h-full w-full object-contain transition duration-700 group-hover:scale-105"
+                    />
+                  </div>
                 ) : (
                   <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-bg-elevated to-bg text-text-dim">
                     {p.title}
