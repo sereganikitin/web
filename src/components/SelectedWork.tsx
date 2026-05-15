@@ -33,7 +33,7 @@ export default function SelectedWork({
             {items.map((p) => (
               <article
                 key={p.id}
-                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-text/5 bg-bg-card"
+                className="group relative aspect-video overflow-hidden rounded-2xl border border-text/5 bg-bg-card"
               >
                 {p.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
@@ -47,7 +47,7 @@ export default function SelectedWork({
                     {p.title}
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/30 to-transparent opacity-90" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bg from-15% via-bg/80 via-55% to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
                   <div>
                     <div className="font-serif text-2xl">{p.title}</div>
