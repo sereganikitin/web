@@ -56,7 +56,7 @@ export default function SelectedWork({
                     {p.title}
                   </div>
                 )}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bg from-10% via-bg/70 via-55% to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-bg from-10% via-bg/85 via-55% to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
                   <div>
                     <div className="font-serif text-2xl">{p.title}</div>
