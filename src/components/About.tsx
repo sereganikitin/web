@@ -30,7 +30,7 @@ export default function About({
             <h2 className="font-serif text-4xl leading-tight md:text-5xl">
               <span className="italic text-accent">{title}</span>
             </h2>
-            <p className="mt-6 max-w-xl whitespace-pre-line text-base leading-relaxed text-text-muted md:text-lg">
+            <p className="mt-6 max-w-xl whitespace-pre-line text-sm leading-relaxed text-text-muted">
               {text}
             </p>
           </div>

@@ -27,7 +27,7 @@ export default function Hero({ eyebrow, line1, line2, subtitle, ctaLabel, ctaHre
           <span className="block italic text-accent">{line2}</span>
         </h1>
 
-        <p className="mt-6 max-w-xl text-base text-text-muted md:text-lg">{subtitle}</p>
+        <p className="mt-6 max-w-xl text-sm text-text-muted">{subtitle}</p>
 
         <a href={ctaHref} className="mt-10 btn-outline group">
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent/15 text-accent transition group-hover:bg-accent group-hover:text-bg">
