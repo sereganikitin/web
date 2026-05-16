@@ -57,7 +57,7 @@ export default function LeadForm({ source, variant = "inline", onSuccess }: Prop
   }
 
   const inputCls =
-    "mt-2 w-full rounded-lg border border-text/10 bg-bg px-4 py-3 text-sm text-text outline-none focus:border-accent";
+    "mt-2 w-full rounded-lg border border-text/10 bg-bg px-4 py-3 text-base text-text outline-none focus:border-accent";
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
