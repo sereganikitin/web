@@ -21,10 +21,12 @@ export async function proxy(req: NextRequest) {
 }
 
 function redirectToLogin(req: NextRequest) {
-  const url = req.nextUrl.clone();
-  url.pathname = "/admin/login";
-  url.searchParams.set("from", req.nextUrl.pathname);
-  return NextResponse.redirect(url);
+  // Относительный Location, чтобы за nginx не утекал хост localhost:3002.
+  const target = `/admin/login?from=${encodeURIComponent(req.nextUrl.pathname)}`;
+  return new NextResponse(null, {
+    status: 307,
+    headers: { Location: target },
+  });
 }
 
 export const config = {
