@@ -10,7 +10,7 @@ export default function About({
   image?: string;
 }) {
   return (
-    <section id="about" className="py-20 md:py-28">
+    <section id="about" className="py-14 md:py-20">
       <div className="container-site">
         <div className="grid items-center gap-10 md:grid-cols-12">
           <div className="md:col-span-5">

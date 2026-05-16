@@ -8,7 +8,7 @@ export default function Services({
   items: Service[];
 }) {
   return (
-    <section id="services" className="py-20 md:py-28">
+    <section id="services" className="py-14 md:py-20">
       <div className="container-site">
         <div className="eyebrow mb-10">{eyebrow}</div>
         <div className="grid gap-4 md:grid-cols-3">

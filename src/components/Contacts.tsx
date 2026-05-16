@@ -21,7 +21,7 @@ export default function Contacts(p: Props) {
   ].filter((x) => x.value);
 
   return (
-    <section id="contacts" className="py-20 md:py-28">
+    <section id="contacts" className="py-14 md:py-20">
       <div className="container-site">
         <div className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-5">

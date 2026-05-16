@@ -11,7 +11,7 @@ export default function SelectedWork({
   items: PortfolioItem[];
 }) {
   return (
-    <section id="work" className="py-20 md:py-28">
+    <section id="work" className="py-14 md:py-20">
       <div className="container-site">
         <div className="mb-10 flex items-end justify-between">
           <h2 className="font-serif text-4xl md:text-5xl">

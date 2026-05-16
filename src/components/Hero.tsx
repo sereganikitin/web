@@ -10,7 +10,7 @@ type Props = {
 
 export default function Hero({ eyebrow, line1, line2, subtitle, ctaLabel, ctaHref, image }: Props) {
   return (
-    <section id="top" className="relative pt-36 pb-20 md:pt-48 md:pb-28">
+    <section id="top" className="relative pt-32 pb-14 md:pt-40 md:pb-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-bg-card/40 via-bg to-bg" />
       <div className="container-site flex flex-col items-center text-center">
         {eyebrow && <div className="eyebrow mb-8">{eyebrow}</div>}
