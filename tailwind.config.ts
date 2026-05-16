@@ -11,9 +11,9 @@ const config: Config = {
           elevated: "#26262b",
         },
         accent: {
-          DEFAULT: "#c4b094",
-          muted: "#8e8068",
-          dim: "#4d4639",
+          DEFAULT: "#ceb389",
+          muted: "#94846a",
+          dim: "#534a3a",
         },
         text: {
           DEFAULT: "#f4f1ea",

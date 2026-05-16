@@ -377,7 +377,7 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
           outline: none;
         }
         .input:focus {
-          border-color: #c4b094;
+          border-color: #ceb389;
         }
       `}</style>
     </div>
