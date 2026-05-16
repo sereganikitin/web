@@ -26,7 +26,7 @@ const config: Config = {
         serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       maxWidth: {
-        site: "1200px",
+        site: "1600px",
       },
     },
   },
