@@ -372,7 +372,7 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
           border: 1px solid rgba(244, 241, 234, 0.1);
           background: #17171a;
           padding: 0.75rem 1rem;
-          color: #f4f1ea;
+          color: #ffffff;
           font-size: 0.875rem;
           outline: none;
         }

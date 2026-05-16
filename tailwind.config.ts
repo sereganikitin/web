@@ -16,9 +16,9 @@ const config: Config = {
           dim: "#534a3a",
         },
         text: {
-          DEFAULT: "#f4f1ea",
-          muted: "#b8b1a3",
-          dim: "#857f72",
+          DEFAULT: "#ffffff",
+          muted: "#e5e7eb",
+          dim: "#9ca3af",
         },
       },
       fontFamily: {
