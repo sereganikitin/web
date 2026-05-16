@@ -61,7 +61,7 @@ export default function PopupCTA() {
         <h3 className="font-serif text-2xl md:text-3xl">
           Обсудим <span className="italic text-accent">проект?</span>
         </h3>
-        <p className="mt-3 text-sm text-text-muted">
+        <p className="mt-3 text-base text-text-muted">
           Оставьте контакт — отвечу в течение дня.
         </p>
 

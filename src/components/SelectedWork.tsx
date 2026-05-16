@@ -61,7 +61,7 @@ export default function SelectedWork({
                   <div>
                     <div className="font-serif text-2xl">{p.title}</div>
                     {p.description && (
-                      <div className="mt-1 max-w-md text-sm text-text-muted line-clamp-2">
+                      <div className="mt-1 max-w-md text-base text-text-muted line-clamp-2">
                         {p.description}
                       </div>
                     )}

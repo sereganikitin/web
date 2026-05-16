@@ -21,7 +21,7 @@ export default function Services({
               <h3 className="mt-6 text-lg font-medium uppercase tracking-wide">
                 {s.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-text-muted">{s.text}</p>
+              <p className="mt-3 text-base leading-relaxed text-text-muted">{s.text}</p>
               <div className="mt-8 flex items-center gap-2 text-xs uppercase tracking-wider text-text-muted">
                 <span className="flex h-7 w-7 items-center justify-center rounded-full border border-text/10 transition group-hover:border-accent group-hover:text-accent">
                   →

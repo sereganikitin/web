@@ -45,7 +45,7 @@ export default function Contacts(p: Props) {
                       <div className="text-xs uppercase tracking-wider text-text-dim">
                         {it.label}
                       </div>
-                      <div className="mt-1 text-sm text-text">{it.value}</div>
+                      <div className="mt-1 text-base text-text">{it.value}</div>
                     </div>
                     <span className="flex h-9 w-9 items-center justify-center rounded-full border border-text/10 text-text-muted transition group-hover:border-accent group-hover:text-accent">
                       ↗
@@ -63,7 +63,7 @@ export default function Contacts(p: Props) {
             <h3 className="font-serif text-2xl md:text-3xl">
               Напишите <span className="italic text-accent">мне</span>
             </h3>
-            <p className="mt-4 max-w-md text-sm text-text-muted">
+            <p className="mt-4 max-w-md text-base text-text-muted">
               Расскажите о задаче — отвечу в течение дня.
             </p>
           </div>
