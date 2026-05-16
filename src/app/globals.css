@@ -71,3 +71,77 @@ body {
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
+
+/* Scroll reveal — applied via IntersectionObserver in Reveal component */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 850ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 850ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero parallax glows — wrapper handles scroll-parallax, inner handles drift */
+.hero-glow-wrap {
+  position: absolute;
+  transform: translate3d(0, calc(var(--scroll, 0) * 0.06px), 0);
+  will-change: transform;
+}
+.hero-glow-pos-1 { top: -180px; left: -160px; }
+.hero-glow-pos-2 { top: 8%;     right: -140px; }
+.hero-glow-pos-3 { bottom: -180px; left: 35%; }
+
+.hero-glow {
+  width: 520px;
+  height: 520px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, #ceb389 0%, rgba(206, 179, 137, 0) 60%);
+  filter: blur(70px);
+  opacity: 0.18;
+  will-change: transform;
+}
+.hero-glow-pos-2 .hero-glow { width: 420px; height: 420px; opacity: 0.13; }
+.hero-glow-pos-3 .hero-glow { width: 360px; height: 360px; opacity: 0.10; }
+
+.hero-glow-drift-1 { animation: drift-1 18s ease-in-out infinite; }
+.hero-glow-drift-2 { animation: drift-2 22s ease-in-out infinite; }
+.hero-glow-drift-3 { animation: drift-3 26s ease-in-out infinite; }
+
+@keyframes drift-1 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(40px, 30px, 0); }
+}
+@keyframes drift-2 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(-32px, 38px, 0); }
+}
+@keyframes drift-3 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(22px, -28px, 0); }
+}
+
+/* Work card 3D tilt — no transition while hovering for instant follow,
+   springy ease-out on leave. */
+.work-card {
+  transform: perspective(900px) rotateX(0deg) rotateY(0deg);
+  transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+}
+.work-card[data-hovering="true"] {
+  transition: none;
+  transform:
+    perspective(900px)
+    rotateX(calc(var(--rx, 0) * 1deg))
+    rotateY(calc(var(--ry, 0) * 1deg));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero-glow-wrap, .hero-glow-drift-1, .hero-glow-drift-2, .hero-glow-drift-3 { animation: none; transform: none; }
+  .work-card, .work-card[data-hovering="true"] { transition: none; transform: none; }
+}

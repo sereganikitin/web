@@ -1,3 +1,5 @@
+import HeroGlow from "./HeroGlow";
+
 type Props = {
   eyebrow: string;
   line1: string;
@@ -10,8 +12,9 @@ type Props = {
 
 export default function Hero({ eyebrow, line1, line2, subtitle, ctaLabel, ctaHref, image }: Props) {
   return (
-    <section id="top" className="relative pt-32 pb-14 md:pt-40 md:pb-20">
+    <section id="top" className="relative overflow-hidden pt-32 pb-14 md:pt-40 md:pb-20">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-bg-card/40 via-bg to-bg" />
+      <HeroGlow />
       <div className="container-site flex flex-col items-center text-center">
         {eyebrow && <div className="eyebrow mb-8">{eyebrow}</div>}
 

@@ -27,11 +27,12 @@ export function setContent(entries: Record<string, string>): void {
 
 export function listPortfolio(opts: { publishedOnly?: boolean } = {}): PortfolioItem[] {
   const where = opts.publishedOnly ? "WHERE is_published = 1" : "";
-  return db
+  const rows = db
     .prepare(
       `SELECT * FROM portfolio ${where} ORDER BY position ASC, id ASC`
     )
     .all() as PortfolioItem[];
+  return rows.map((r) => ({ ...r }));
 }
 
 export function getPortfolio(id: number): PortfolioItem | undefined {
