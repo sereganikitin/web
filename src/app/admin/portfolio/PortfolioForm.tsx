@@ -370,14 +370,14 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
           width: 100%;
           border-radius: 0.5rem;
           border: 1px solid rgba(244, 241, 234, 0.1);
-          background: #0a0a0a;
+          background: #17171a;
           padding: 0.75rem 1rem;
           color: #f4f1ea;
           font-size: 0.875rem;
           outline: none;
         }
         .input:focus {
-          border-color: #d4b88a;
+          border-color: #c4b094;
         }
       `}</style>
     </div>

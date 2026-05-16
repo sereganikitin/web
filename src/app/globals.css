@@ -4,12 +4,12 @@
 
 :root {
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
 }
 
 html,
 body {
-  background: #0a0a0a;
+  background: #17171a;
   color: #f4f1ea;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,8 +21,8 @@ body {
 }
 
 ::selection {
-  background: #d4b88a;
-  color: #0a0a0a;
+  background: #c4b094;
+  color: #17171a;
 }
 
 /* Scrollbar */
@@ -31,14 +31,14 @@ body {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #17171a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
+  background: #2e2e34;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a3a;
+  background: #3e3e45;
 }
 
 @layer components {

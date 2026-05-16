@@ -6,14 +6,14 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: "#0a0a0a",
-          card: "#141414",
-          elevated: "#1a1a1a",
+          DEFAULT: "#17171a",
+          card: "#1f1f23",
+          elevated: "#26262b",
         },
         accent: {
-          DEFAULT: "#d4b88a",
-          muted: "#9b8866",
-          dim: "#5a4f3b",
+          DEFAULT: "#c4b094",
+          muted: "#8e8068",
+          dim: "#4d4639",
         },
         text: {
           DEFAULT: "#f4f1ea",
