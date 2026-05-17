@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { getContent } from "@/lib/content";
+import BackgroundPattern from "@/components/BackgroundPattern";
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContent();
@@ -27,7 +28,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-bg text-text">{children}</body>
+      <body className="min-h-screen text-text">
+        <BackgroundPattern />
+        {children}
+      </body>
     </html>
   );
 }

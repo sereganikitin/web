@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 const links = [
   { href: "#services", label: "Услуги" },
@@ -27,8 +28,8 @@ export default function Header() {
           scrolled ? "bg-bg/80 shadow-2xl shadow-black/40" : "bg-bg-card/60"
         }`}
       >
-        <a href="#top" className="px-4 font-serif text-lg italic text-accent">
-          sn.
+        <a href="#top" className="px-4" aria-label="На главную">
+          <Logo size="text-lg" />
         </a>
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
