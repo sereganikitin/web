@@ -7,10 +7,9 @@
   --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
 }
 
-html {
-  background: #17171a;
-}
+html,
 body {
+  background: #17171a;
   color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
