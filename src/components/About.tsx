@@ -17,7 +17,7 @@ export default function About({
             <div className="aspect-[4/5] overflow-hidden rounded-2xl border border-text/5 bg-bg-card">
               {image ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={image} alt={title} className="h-full w-full object-cover grayscale" />
+                <img src={image} alt={title} className="h-full w-full object-cover" />
               ) : (
                 <div className="flex h-full w-full items-center justify-center text-text-dim">
                   Фото
