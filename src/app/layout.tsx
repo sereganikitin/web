@@ -8,6 +8,9 @@ export async function generateMetadata(): Promise<Metadata> {
     title: c["site.title"] ?? "Сергей Никитин — веб-разработка",
     description: c["site.description"] ?? "",
     metadataBase: new URL(process.env.SITE_URL ?? "https://web.cd-agency.ru"),
+    verification: {
+      yandex: "064aab0b765bcc56",
+    },
     openGraph: {
       title: c["site.title"],
       description: c["site.description"],
