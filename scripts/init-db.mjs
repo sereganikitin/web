@@ -87,32 +87,32 @@ ensureCol("client", "client TEXT NOT NULL DEFAULT ''");
 ensureCol("year", "year TEXT NOT NULL DEFAULT ''");
 
 const defaults = {
-  "site.title": "Сергей Никитин — веб-разработка",
+  "site.title": "Сергей Никитин — веб-разработчик в Москве",
   "site.description":
-    "Frontend и backend разработка. Создаю сайты любой сложности: лендинги, визитки, интернет-магазины.",
+    "Разработка сайтов любой сложности в Москве: лендинги, визитки, корпоративные сайты, интернет-магазины, Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web.",
 
-  "hero.eyebrow": "LIVE PREVIEW",
-  "hero.title_line1": "Веб-разработчик",
-  "hero.title_line2": "Frontend & backend",
+  "hero.eyebrow": "Веб-разработчик в Москве",
+  "hero.title_line1": "Сайты любой",
+  "hero.title_line2": "сложности",
   "hero.subtitle":
-    "Frontend и backend разработка, создание сайтов любой сложности — от лендингов до интернет-магазинов.",
+    "Лендинги, корпоративные сайты, интернет-магазины и Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web — недорого и под ключ.",
   "hero.cta_label": "Мои услуги",
   "hero.cta_href": "#services",
   "hero.image": "",
 
   "services.eyebrow": "Услуги",
   "services.s1.num": "01",
-  "services.s1.title": "Frontend",
+  "services.s1.title": "Сайты под ключ",
   "services.s1.text":
-    "Современные интерфейсы на React, Next.js и TypeScript. Адаптив, анимации, оптимизация скорости.",
+    "Лендинги, сайты-визитки, корпоративные сайты и интернет-магазины. Разработка с нуля на Next.js, React, Python — от проектирования до запуска и поддержки. Можно недорого.",
   "services.s2.num": "02",
-  "services.s2.title": "Backend",
+  "services.s2.title": "Интеграции и API",
   "services.s2.text":
-    "API на Node.js, PHP, базы данных, интеграции с CRM, платёжными системами и сторонними сервисами.",
+    "Подключение сайта к CRM (amoCRM, Битрикс24, RetailCRM), платёжным системам, сервисам доставки и аналитике. API на Node.js и Python.",
   "services.s3.num": "03",
-  "services.s3.title": "Под ключ",
+  "services.s3.title": "Telegram-боты",
   "services.s3.text":
-    "Лендинги, визитки, корпоративные сайты, интернет-магазины. От проектирования до запуска и поддержки.",
+    "Боты для приёма заявок, продаж, поддержки и автоматизации. Связка с сайтом и CRM. Полный спектр услуг по web — на одном стеке.",
 
   "work.eyebrow": "Selected",
   "work.title": "Работы",
@@ -120,7 +120,7 @@ const defaults = {
   "about.eyebrow": "Обо мне",
   "about.title": "Сергей Никитин",
   "about.text":
-    "Веб-разработчик с опытом от лендингов до e-commerce. Делаю быстрые, удобные и надёжные сайты — от идеи до продакшена. Работаю с современным стеком: React/Next.js, Node.js, TypeScript, базами данных и облачными сервисами.",
+    "Веб-разработчик из Москвы. Делаю сайты любой сложности — от лендингов до e-commerce и Telegram-ботов. Работаю с современным стеком: Next.js, React, Node.js, Python, TypeScript, базы данных, облачные сервисы. Подключаю CRM-системы и платёжные сервисы. Беру задачи под ключ — от идеи до продакшена и поддержки.",
 
   "contacts.eyebrow": "Контакты",
   "contacts.title": "Свяжитесь со мной",

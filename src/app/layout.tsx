@@ -11,28 +11,49 @@ const YANDEX_VERIFICATION = process.env.YANDEX_VERIFICATION ?? "064aab0b765bcc56
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContent();
-  const title = c["site.title"] ?? "Сергей Никитин — веб-разработка";
+  const title = c["site.title"] ?? "Сергей Никитин — веб-разработчик в Москве";
   const description =
     c["site.description"] ??
-    "Frontend и backend разработка. Создаю сайты любой сложности: лендинги, визитки, интернет-магазины.";
+    "Разработка сайтов любой сложности в Москве: лендинги, визитки, корпоративные сайты, интернет-магазины, Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web.";
   return {
     title,
     description,
     metadataBase: new URL(SITE_URL),
     alternates: { canonical: "/" },
     keywords: [
-      "веб-разработка",
+      // основные направления
       "разработка сайтов",
-      "frontend разработчик",
-      "backend разработчик",
-      "Next.js",
-      "React",
-      "Node.js",
-      "TypeScript",
+      "веб-разработка",
+      "веб-разработчик",
+      "веб-разработчик в Москве",
       "создание сайтов",
-      "интернет-магазин",
+      "сайты любой сложности",
+      "полный спектр услуг по web",
+      // ценовые запросы
+      "лендинг недорого",
+      "сайт дешево",
+      "заказать сайт",
+      // типы сайтов
       "лендинг",
       "сайт-визитка",
+      "корпоративный сайт",
+      "интернет-магазин",
+      // технологии
+      "сайты на Next.js",
+      "сайты на Next js",
+      "сайты на React",
+      "сайты на Python",
+      "сайты на Node.js",
+      "TypeScript",
+      // дополнительные услуги
+      "телеграм-боты",
+      "telegram боты",
+      "разработка telegram-ботов",
+      "интеграция сайта с CRM",
+      "интеграция с amoCRM",
+      "интеграция с Битрикс24",
+      "frontend разработчик",
+      "backend разработчик",
       "Сергей Никитин",
     ],
     authors: [{ name: "Сергей Никитин" }],
