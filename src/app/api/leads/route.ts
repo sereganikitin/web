@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createLead } from "@/lib/leads";
 import { sendLeadNotification } from "@/lib/mailer";
+import { sendLeadTelegram } from "@/lib/telegram";
 
 const MAX_NAME = 100;
 const MAX_CONTACT = 200;
@@ -33,9 +34,12 @@ export async function POST(req: Request) {
 
   const lead = createLead({ name, contact, message, source });
 
-  // Email notification — non-blocking to the user response. Errors logged only.
+  // Notifications — обе non-blocking, заявка уже в БД.
   sendLeadNotification(lead).catch((e) => {
     console.error("[mailer] sendLeadNotification failed:", e);
+  });
+  sendLeadTelegram(lead).catch((e) => {
+    console.error("[telegram] sendLeadTelegram failed:", e);
   });
 
   return NextResponse.json({ ok: true });
