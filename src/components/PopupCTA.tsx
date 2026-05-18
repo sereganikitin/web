@@ -4,70 +4,64 @@ import { useEffect, useState } from "react";
 import LeadForm from "./LeadForm";
 
 const STORAGE_KEY = "popup_cta_dismissed";
-const DELAY_MS = 30_000;
+const DELAY_MS = 60_000;
 
 export default function PopupCTA() {
-  const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (sessionStorage.getItem(STORAGE_KEY) === "1") return;
-    const t = window.setTimeout(() => setOpen(true), DELAY_MS);
+    const t = window.setTimeout(() => setMounted(true), DELAY_MS);
     return () => window.clearTimeout(t);
   }, []);
 
   function dismiss() {
     sessionStorage.setItem(STORAGE_KEY, "1");
-    setOpen(false);
+    setMounted(false);
   }
 
-  useEffect(() => {
-    if (!open) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") dismiss();
-    }
-    document.addEventListener("keydown", onKey);
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = prevOverflow;
-    };
-  }, [open]);
-
-  if (!open) return null;
+  if (!mounted) return null;
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-end justify-center bg-black/70 p-4 backdrop-blur-sm md:items-center"
-      onClick={dismiss}
-      role="dialog"
-      aria-modal="true"
-    >
-      <div
-        className="relative w-full max-w-md rounded-2xl border border-text/10 bg-bg-card p-6 shadow-2xl shadow-black/60 md:p-8"
-        onClick={(e) => e.stopPropagation()}
-      >
+    <div className="fixed bottom-4 right-4 z-50 w-[min(360px,calc(100vw-2rem))] animate-fade-in-up">
+      <div className="relative rounded-2xl border border-text/10 bg-bg-card p-5 shadow-2xl shadow-black/60">
         <button
           type="button"
           onClick={dismiss}
           aria-label="Закрыть"
-          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-text/10 text-text-muted transition hover:border-accent hover:text-accent"
+          className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded-full text-text-muted transition hover:text-accent"
         >
           ×
         </button>
 
-        <div className="eyebrow mb-2">Свяжитесь со мной</div>
-        <h3 className="font-serif text-2xl md:text-3xl">
-          Обсудим <span className="italic text-accent">проект?</span>
-        </h3>
-        <p className="mt-3 text-base text-text-muted">
-          Оставьте контакт — отвечу в течение дня.
-        </p>
-
-        <div className="mt-6">
-          <LeadForm source="popup" variant="popup" />
-        </div>
+        {!expanded ? (
+          <button
+            type="button"
+            onClick={() => setExpanded(true)}
+            className="block w-full pr-6 text-left"
+          >
+            <h3 className="font-serif text-lg">
+              Обсудим <span className="italic text-accent">проект?</span>
+            </h3>
+            <p className="mt-1 text-sm text-text-muted">
+              Оставьте контакт — отвечу в течение дня.
+            </p>
+            <span className="mt-3 inline-block text-xs uppercase tracking-wider text-accent">
+              Написать →
+            </span>
+          </button>
+        ) : (
+          <>
+            <h3 className="font-serif text-lg">
+              Обсудим <span className="italic text-accent">проект?</span>
+            </h3>
+            <div className="mt-4">
+              <LeadForm source="popup" variant="popup" onSuccess={dismiss} />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

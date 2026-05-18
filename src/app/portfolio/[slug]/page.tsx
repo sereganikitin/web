@@ -27,7 +27,17 @@ export async function generateMetadata({
   return {
     title: `${item.title} — Сергей Никитин`,
     description: item.description || undefined,
+    alternates: { canonical: `/portfolio/${item.slug}` },
     openGraph: {
+      title: item.title,
+      description: item.description,
+      type: "article",
+      locale: "ru_RU",
+      url: `/portfolio/${item.slug}`,
+      images: item.image ? [item.image] : [],
+    },
+    twitter: {
+      card: "summary_large_image",
       title: item.title,
       description: item.description,
       images: item.image ? [item.image] : [],
