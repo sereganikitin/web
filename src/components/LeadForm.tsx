@@ -13,12 +13,17 @@ export default function LeadForm({ source, variant = "inline", onSuccess }: Prop
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
   const [company, setCompany] = useState(""); // honeypot
+  const [consent, setConsent] = useState(true);
   const [err, setErr] = useState<string | null>(null);
   const [done, setDone] = useState(false);
   const [loading, setLoading] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!consent) {
+      setErr("Необходимо согласие на обработку персональных данных");
+      return;
+    }
     setErr(null);
     setLoading(true);
     const r = await fetch("/api/leads", {
@@ -106,6 +111,28 @@ export default function LeadForm({ source, variant = "inline", onSuccess }: Prop
           maxLength={2000}
           className={inputCls}
         />
+      </label>
+
+      <label className="flex items-start gap-2 text-xs text-text-muted">
+        <input
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-0.5 h-4 w-4 cursor-pointer accent-accent"
+          required
+        />
+        <span>
+          Я согласен на обработку персональных данных в соответствии с{" "}
+          <a
+            href="/privacy"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-accent hover:underline"
+          >
+            Политикой конфиденциальности
+          </a>
+          .
+        </span>
       </label>
 
       {err && <div className="text-sm text-red-400">{err}</div>}
