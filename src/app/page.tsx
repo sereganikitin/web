@@ -39,16 +39,19 @@ export default function HomePage() {
                 num: c["services.s1.num"] ?? "01",
                 title: c["services.s1.title"] ?? "",
                 text: c["services.s1.text"] ?? "",
+                href: c["services.s1.href"] || "/uslugi/lending",
               },
               {
                 num: c["services.s2.num"] ?? "02",
                 title: c["services.s2.title"] ?? "",
                 text: c["services.s2.text"] ?? "",
+                href: c["services.s2.href"] || "/uslugi/integraciya-crm",
               },
               {
                 num: c["services.s3.num"] ?? "03",
                 title: c["services.s3.title"] ?? "",
                 text: c["services.s3.text"] ?? "",
+                href: c["services.s3.href"] || "/uslugi/telegram-bot",
               },
             ]}
           />

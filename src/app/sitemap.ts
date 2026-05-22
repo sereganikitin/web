@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listPortfolio } from "@/lib/content";
+import { SERVICES } from "@/lib/services-content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.SITE_URL ?? "https://web.cd-agency.ru";
@@ -9,6 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: `${base}/`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/uslugi`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    ...SERVICES.map((s) => ({
+      url: `${base}/uslugi/${s.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
     ...items.map((p) => ({
       url: `${base}/portfolio/${p.slug}`,
       lastModified: p.updated_at ? new Date(p.updated_at) : now,
