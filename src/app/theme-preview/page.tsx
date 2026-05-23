@@ -27,6 +27,26 @@ const VARIANTS = [
     accent: "#fb923c",
     desc: "Тёплый оранжевый. Rust, Stripe, HackerRank, dev-meetups.",
   },
+  {
+    name: "Electric Cyan",
+    accent: "#06b6d4",
+    desc: "Неоновый бирюзовый. Cyberpunk, чисто-tech, неожиданно.",
+  },
+  {
+    name: "Lime / Acid",
+    accent: "#a3e635",
+    desc: "Ядовито-салатовый. Энергия, кнопки CTA выделяются издалека.",
+  },
+  {
+    name: "Magenta / Pink",
+    accent: "#ec4899",
+    desc: "Smart-пинк. JetBrains, Figma. Креативный dev, не банально.",
+  },
+  {
+    name: "Teal",
+    accent: "#14b8a6",
+    desc: "Бирюзово-зелёный. Спокойный SaaS, что-то между mint и sky.",
+  },
 ];
 
 export default function ThemePreview() {
@@ -76,7 +96,8 @@ export default function ThemePreview() {
         </div>
 
         <div style={{ marginTop: 60, color: "#9ca3af", fontSize: 14 }}>
-          Напиши в чат: «Mint», «Indigo», «Sky» или «Coral» — применю на весь сайт.
+          Напиши в чат название варианта (Mint, Indigo, Sky, Coral, Cyan, Lime,
+          Magenta, Teal) — применю на весь сайт и уберу превью-страницу.
         </div>
       </div>
     </main>
