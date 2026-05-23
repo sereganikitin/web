@@ -47,6 +47,26 @@ const VARIANTS = [
     accent: "#14b8a6",
     desc: "Бирюзово-зелёный. Спокойный SaaS, что-то между mint и sky.",
   },
+  {
+    name: "Slate / Steel",
+    accent: "#94a3b8",
+    desc: "Стальной серый. Monochrome без цвета — Apple-стиль, премиум-минимализм.",
+  },
+  {
+    name: "Lavender",
+    accent: "#c4b5fd",
+    desc: "Мягкая лаванда. Нежно, спокойно, нестандартно для tech-сайта.",
+  },
+  {
+    name: "Salmon",
+    accent: "#fb7185",
+    desc: "Тёплый розово-красный. Дружелюбный, заметный, не агрессивный.",
+  },
+  {
+    name: "Periwinkle",
+    accent: "#a5b4fc",
+    desc: "Голубо-фиолетовый. Между Indigo и Lavender — модный 2025-2026.",
+  },
 ];
 
 export default function ThemePreview() {
@@ -97,7 +117,8 @@ export default function ThemePreview() {
 
         <div style={{ marginTop: 60, color: "#9ca3af", fontSize: 14 }}>
           Напиши в чат название варианта (Mint, Indigo, Sky, Coral, Cyan, Lime,
-          Magenta, Teal) — применю на весь сайт и уберу превью-страницу.
+          Magenta, Teal, Slate, Lavender, Salmon, Periwinkle) — применю на весь сайт
+          и уберу превью-страницу.
         </div>
       </div>
     </main>
