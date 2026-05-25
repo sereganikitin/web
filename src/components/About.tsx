@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About({
   eyebrow,
   title,
@@ -33,6 +35,15 @@ export default function About({
             <p className="mt-6 max-w-xl whitespace-pre-line text-base leading-relaxed text-text-muted">
               {text}
             </p>
+            <Link
+              href="/about"
+              className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-wider text-text-muted transition hover:text-accent"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded-full border border-text/10 transition group-hover:border-accent">
+                →
+              </span>
+              Подробнее обо мне
+            </Link>
           </div>
         </div>
       </div>

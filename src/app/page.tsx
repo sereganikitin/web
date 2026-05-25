@@ -10,12 +10,35 @@ import PopupCTA from "@/components/PopupCTA";
 import Reveal from "@/components/Reveal";
 import { getContent, listLogos, listPortfolio } from "@/lib/content";
 
+const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
+
 export const dynamic = "force-dynamic";
 
 export default function HomePage() {
   const c = getContent();
   const logos = listLogos();
   const portfolio = listPortfolio({ publishedOnly: true });
+
+  // WebPage с speakable и lastReviewed — для голосовых ассистентов и AI.
+  const webPageLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: c["site.title"] ?? "Сергей Никитин — веб-разработка",
+    description: c["site.description"] ?? undefined,
+    inLanguage: "ru-RU",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#person` },
+    lastReviewed: new Date().toISOString().slice(0, 10),
+    primaryImageOfPage: c["hero.image"]
+      ? { "@type": "ImageObject", url: new URL(c["hero.image"], SITE_URL).toString() }
+      : undefined,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".speakable"],
+    },
+  };
 
   return (
     <>
@@ -86,6 +109,11 @@ export default function HomePage() {
       </main>
       <Footer copy={c["footer.copy"] ?? "© Сергей Никитин"} />
       <PopupCTA />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
+      />
     </>
   );
 }

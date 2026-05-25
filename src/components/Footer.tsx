@@ -33,8 +33,18 @@ export default function Footer({ copy }: { copy: string }) {
           </div>
 
           <div className="text-sm text-text-muted">
-            <div className="text-xs uppercase tracking-wider text-text-dim">Документы</div>
+            <div className="text-xs uppercase tracking-wider text-text-dim">Сайт</div>
             <div className="mt-2 space-y-1">
+              <div>
+                <a href="/about" className="hover:text-accent">
+                  Обо мне
+                </a>
+              </div>
+              <div>
+                <a href="/uslugi" className="hover:text-accent">
+                  Услуги
+                </a>
+              </div>
               <div>
                 <a href="/privacy" className="hover:text-accent">
                   Политика конфиденциальности
