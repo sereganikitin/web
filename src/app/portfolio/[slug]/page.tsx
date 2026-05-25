@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getContent, getPortfolioBySlug, listPortfolio } from "@/lib/content";
 
+const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
+
 export const dynamic = "force-dynamic";
 
 function parseGallery(raw: string): string[] {
@@ -62,6 +64,49 @@ export default async function ProjectPage({
   const idx = all.findIndex((p) => p.id === item.id);
   const prev = idx > 0 ? all[idx - 1] : null;
   const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : null;
+
+  const pageUrl = `${SITE_URL}/portfolio/${item.slug}`;
+  const imageUrl = item.image
+    ? new URL(item.image, SITE_URL).toString()
+    : undefined;
+
+  // Article schema — E-E-A-T сигнал и помощь AI-движкам цитировать кейс
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: item.title,
+    description: item.description || undefined,
+    image: imageUrl ? [imageUrl] : undefined,
+    datePublished: item.created_at,
+    dateModified: item.updated_at,
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Сергей Никитин",
+      url: SITE_URL,
+    },
+    publisher: { "@id": `${SITE_URL}/#person` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+    articleSection: item.category || undefined,
+    inLanguage: "ru-RU",
+    about: item.client || undefined,
+  };
+
+  // BreadcrumbList — структурные хлебные крошки для поиска и AI
+  const breadcrumbsLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Главная", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Работы", item: `${SITE_URL}/#work` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: item.title,
+        item: pageUrl,
+      },
+    ],
+  };
 
   return (
     <>
@@ -210,6 +255,15 @@ export default async function ProjectPage({
         </article>
       </main>
       <Footer copy={c["footer.copy"] ?? "© Сергей Никитин"} />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsLd) }}
+      />
     </>
   );
 }
