@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import { clearSessionCookie } from "@/lib/auth";
 
-export async function POST() {
+export async function POST(req: Request) {
   await clearSessionCookie();
-  // Относительный Location, чтобы не зависеть от того,
-  // какой Host видит Next.js за nginx (req.url был localhost:3002).
-  return new NextResponse(null, {
-    status: 303,
-    headers: { Location: "/admin/login" },
-  });
+  // Конструируем абсолютный URL из исходного req.url — Next 16
+  // не принимает голый Location-string с относительным путём
+  // (TypeError: Invalid URL внутри его рантайма).
+  const url = new URL("/admin/login", req.url);
+  return NextResponse.redirect(url, 303);
 }

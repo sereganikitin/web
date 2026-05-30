@@ -21,12 +21,15 @@ export async function proxy(req: NextRequest) {
 }
 
 function redirectToLogin(req: NextRequest) {
-  // Относительный Location, чтобы за nginx не утекал хост localhost:3002.
-  const target = `/admin/login?from=${encodeURIComponent(req.nextUrl.pathname)}`;
-  return new NextResponse(null, {
-    status: 307,
-    headers: { Location: target },
-  });
+  // Клонируем req.nextUrl — он содержит правильный proto/host
+  // (Next подставляет их из Host/X-Forwarded-Host заголовков),
+  // и меняем путь. NextResponse.redirect ждёт абсолютный URL,
+  // а голый Location-string с относительным путём ломает Next 16
+  // на этапе внутреннего парсинга → TypeError: Invalid URL.
+  const url = req.nextUrl.clone();
+  url.pathname = "/admin/login";
+  url.search = `?from=${encodeURIComponent(req.nextUrl.pathname)}`;
+  return NextResponse.redirect(url, 307);
 }
 
 export const config = {
