@@ -71,3 +71,23 @@ export type Lead = {
   is_read: number;
   created_at: string;
 };
+
+// Service row — массивы/объекты хранятся как JSON-строки в TEXT-полях.
+// Раскрытие в ServiceContent делает lib/services.ts.
+export type ServiceRow = {
+  slug: string;
+  position: number;
+  meta_title: string;
+  meta_description: string;
+  card_title: string;
+  card_summary: string;
+  card_keywords: string; // JSON string[]
+  eyebrow: string;
+  h1: string;
+  intro: string;
+  includes: string; // JSON {title, text}[]
+  pricing: string; // JSON {priceFrom, deadline, note?}
+  faq: string; // JSON {q, a}[]
+  case_slugs: string; // JSON string[]
+  updated_at: string;
+};

@@ -1,5 +1,5 @@
 import { listPortfolio } from "@/lib/content";
-import { SERVICES } from "@/lib/services-content";
+import { listServices } from "@/lib/services";
 import { LEGAL } from "@/lib/legal";
 
 const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
@@ -11,6 +11,7 @@ export const dynamic = "force-dynamic";
 // информацией. https://llmstxt.org/
 export async function GET() {
   const portfolio = listPortfolio({ publishedOnly: true });
+  const services = listServices();
 
   const lines: string[] = [];
   lines.push(`# Сергей Никитин — веб-разработчик в Москве`);
@@ -32,7 +33,7 @@ export async function GET() {
   lines.push(``);
   lines.push(`## Услуги`);
   lines.push(``);
-  for (const s of SERVICES) {
+  for (const s of services) {
     lines.push(`### ${s.cardTitle}`);
     lines.push(``);
     lines.push(`- **URL:** ${SITE_URL}/uslugi/${s.slug}`);

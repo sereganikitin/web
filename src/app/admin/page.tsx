@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { listPortfolio } from "@/lib/content";
 import { countUnreadLeads } from "@/lib/leads";
+import { listServices } from "@/lib/services";
 
 export const dynamic = "force-dynamic";
 
 export default function AdminDashboard() {
   const portfolio = listPortfolio();
+  const services = listServices();
   const unread = countUnreadLeads();
   const cards = [
     {
@@ -16,7 +18,12 @@ export default function AdminDashboard() {
     {
       href: "/admin/content",
       title: "Тексты сайта",
-      desc: "Hero, услуги, разделы Обо мне и Контакты.",
+      desc: "Hero, услуги на главной, разделы Обо мне и Контакты.",
+    },
+    {
+      href: "/admin/services",
+      title: `Услуги (${services.length})`,
+      desc: "Страницы раздела /uslugi: тексты, цены, FAQ, кейсы.",
     },
     {
       href: "/admin/portfolio",

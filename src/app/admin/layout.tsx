@@ -6,6 +6,7 @@ const nav = [
   { href: "/admin", label: "Дашборд" },
   { href: "/admin/leads", label: "Заявки" },
   { href: "/admin/content", label: "Тексты" },
+  { href: "/admin/services", label: "Услуги" },
   { href: "/admin/portfolio", label: "Портфолио" },
   { href: "/admin/logos", label: "Логотипы клиентов" },
   { href: "/admin/contacts", label: "Контакты" },

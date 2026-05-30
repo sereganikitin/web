@@ -74,6 +74,24 @@ CREATE TABLE IF NOT EXISTS leads (
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 CREATE INDEX IF NOT EXISTS idx_leads_created_at ON leads (created_at DESC);
+
+CREATE TABLE IF NOT EXISTS services (
+  slug             TEXT PRIMARY KEY,
+  position         INTEGER NOT NULL DEFAULT 0,
+  meta_title       TEXT NOT NULL DEFAULT '',
+  meta_description TEXT NOT NULL DEFAULT '',
+  card_title       TEXT NOT NULL DEFAULT '',
+  card_summary     TEXT NOT NULL DEFAULT '',
+  card_keywords    TEXT NOT NULL DEFAULT '[]',
+  eyebrow          TEXT NOT NULL DEFAULT '',
+  h1               TEXT NOT NULL DEFAULT '',
+  intro            TEXT NOT NULL DEFAULT '',
+  includes         TEXT NOT NULL DEFAULT '[]',
+  pricing          TEXT NOT NULL DEFAULT '{}',
+  faq              TEXT NOT NULL DEFAULT '[]',
+  case_slugs       TEXT NOT NULL DEFAULT '[]',
+  updated_at       TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 `);
 
 // Migrations: add columns introduced after the initial schema (idempotent).

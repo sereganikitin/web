@@ -327,6 +327,6 @@ export const SERVICES: ServiceContent[] = [
   },
 ];
 
-export function getServiceBySlug(slug: string): ServiceContent | undefined {
-  return SERVICES.find((s) => s.slug === slug);
-}
+// runtime read/write — в lib/services.ts (DB-backed).
+// Этот файл остаётся как seed-источник: при первом обращении
+// listServices() заливает SERVICES в SQLite, дальше всё через БД.

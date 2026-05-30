@@ -4,7 +4,7 @@ import "./globals.css";
 import { getContent } from "@/lib/content";
 import CookieNotice from "@/components/CookieNotice";
 import { LEGAL } from "@/lib/legal";
-import { SERVICES } from "@/lib/services-content";
+import { listServices } from "@/lib/services";
 
 const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
 const YANDEX_METRIKA_ID = 109261322;
@@ -85,6 +85,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const c = getContent();
+  const services = listServices();
 
   // Person: E-E-A-T сигналы — экспертиза, специализации, контакты, аффилиация
   const personLd = {
@@ -170,7 +171,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Услуги веб-разработки",
-      itemListElement: SERVICES.map((s) => ({
+      itemListElement: services.map((s) => ({
         "@type": "Offer",
         url: `${SITE_URL}/uslugi/${s.slug}`,
         priceCurrency: "RUB",

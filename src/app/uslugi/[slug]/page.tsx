@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getContent, getPortfolioBySlug } from "@/lib/content";
-import { SERVICES, getServiceBySlug } from "@/lib/services-content";
+import { listServices, getServiceBySlug } from "@/lib/services";
 import { LEGAL } from "@/lib/legal";
 
 export const dynamic = "force-dynamic";
@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
 
 export function generateStaticParams() {
-  return SERVICES.map((s) => ({ slug: s.slug }));
+  return listServices().map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({

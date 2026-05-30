@@ -3,7 +3,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getContent } from "@/lib/content";
-import { SERVICES } from "@/lib/services-content";
+import { listServices } from "@/lib/services";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 
 export default function UslugiIndex() {
   const c = getContent();
+  const services = listServices();
   return (
     <>
       <Header />
@@ -41,7 +42,7 @@ export default function UslugiIndex() {
           </p>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {SERVICES.map((s, i) => (
+            {services.map((s, i) => (
               <Link
                 key={s.slug}
                 href={`/uslugi/${s.slug}`}
