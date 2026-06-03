@@ -3,9 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getContent, getPortfolioBySlug } from "@/lib/content";
+import { getContent, getPortfolioBySlug, listPortfolio } from "@/lib/content";
 import { listServices, getServiceBySlug } from "@/lib/services";
 import { LEGAL } from "@/lib/legal";
+import ServiceUniqueBlock from "@/components/ServiceUniqueBlock";
 
 export const dynamic = "force-dynamic";
 
@@ -57,6 +58,15 @@ export default async function ServicePage({
   const cases = (svc.caseSlugs ?? [])
     .map((s) => getPortfolioBySlug(s))
     .filter((p): p is NonNullable<typeof p> => Boolean(p && p.is_published));
+
+  // Связанные услуги — все, кроме текущей. Берём первые 3 в порядке массива.
+  const otherServices = listServices().filter((s) => s.slug !== svc.slug).slice(0, 3);
+
+  // Дополнительные кейсы — из общего портфолио, не дубли с разделом «Примеры».
+  const caseIds = new Set(cases.map((c) => c.id));
+  const moreCases = listPortfolio({ publishedOnly: true })
+    .filter((p) => !caseIds.has(p.id))
+    .slice(0, 2);
 
   // JSON-LD: BreadcrumbList
   const breadcrumbsLd = {
@@ -173,6 +183,9 @@ export default async function ServicePage({
             </div>
           </section>
 
+          {/* Уникальный блок для конкретной услуги (анти-шаблон) */}
+          <ServiceUniqueBlock slug={svc.slug} />
+
           {/* Стоимость и сроки */}
           <section className="container-site py-14">
             <h2 className="font-serif text-3xl md:text-4xl">
@@ -256,6 +269,51 @@ export default async function ServicePage({
                     {item.a}
                   </p>
                 </details>
+              ))}
+            </div>
+          </section>
+
+          {/* Смотрите также — другие услуги + кейсы */}
+          <section className="container-site py-14">
+            <h2 className="font-serif text-3xl md:text-4xl">
+              Смотрите <span className="italic text-accent">также</span>
+            </h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {otherServices.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/uslugi/${s.slug}`}
+                  className="group rounded-2xl border border-text/5 bg-bg-card p-6 transition hover:border-accent/30 hover:bg-bg-elevated"
+                >
+                  <div className="text-xs uppercase tracking-wider text-text-dim">
+                    Услуга
+                  </div>
+                  <div className="mt-3 font-serif text-xl">
+                    <span className="italic text-accent">{s.cardTitle}</span>
+                  </div>
+                  <p className="mt-2 text-sm text-text-muted line-clamp-2">
+                    {s.cardSummary}
+                  </p>
+                </Link>
+              ))}
+              {moreCases.map((p) => (
+                <Link
+                  key={`case-${p.id}`}
+                  href={`/portfolio/${p.slug}`}
+                  className="group rounded-2xl border border-text/5 bg-bg-card p-6 transition hover:border-accent/30 hover:bg-bg-elevated"
+                >
+                  <div className="text-xs uppercase tracking-wider text-text-dim">
+                    Кейс · {p.category}
+                  </div>
+                  <div className="mt-3 font-serif text-xl">
+                    <span className="italic text-accent">{p.title}</span>
+                  </div>
+                  {p.description && (
+                    <p className="mt-2 text-sm text-text-muted line-clamp-2">
+                      {p.description}
+                    </p>
+                  )}
+                </Link>
               ))}
             </div>
           </section>

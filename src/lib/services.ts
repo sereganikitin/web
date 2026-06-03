@@ -131,3 +131,10 @@ export function updateService(originalSlug: string, s: Service): void {
 export function deleteService(slug: string): void {
   db.prepare("DELETE FROM services WHERE slug = ?").run(slug);
 }
+
+// Обратная связка: для кейса из портфолио — список услуг, где он
+// фигурирует в caseSlugs. Используется в блоке «Технологии в проекте»
+// на /portfolio/[slug].
+export function servicesForPortfolio(portfolioSlug: string): Service[] {
+  return listServices().filter((s) => s.caseSlugs.includes(portfolioSlug));
+}

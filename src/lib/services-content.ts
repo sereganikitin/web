@@ -245,7 +245,7 @@ export const SERVICES: ServiceContent[] = [
         a: "Конечно. Стандартный сценарий: заявка с сайта → запись в CRM → уведомление в бот → обработка менеджером → автоответ клиенту в чате.",
       },
     ],
-    caseSlugs: [],
+    caseSlugs: ["ann_shestakova", "cd-agency", "lk-broker"],
   },
 
   {
@@ -323,7 +323,7 @@ export const SERVICES: ServiceContent[] = [
         a: "Да. По умолчанию настраиваю передачу всех UTM, источника (Яндекс, Google, прямой), реферера, страницы входа и cookie ClientID Метрики. Это позволяет считать конверсии и ROI каналов.",
       },
     ],
-    caseSlugs: ["lk-broker"],
+    caseSlugs: ["lk-broker", "primeresin"],
   },
 ];
 

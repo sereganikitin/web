@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getContent, getPortfolioBySlug, listPortfolio } from "@/lib/content";
+import { servicesForPortfolio } from "@/lib/services";
 
 const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
 
@@ -69,6 +70,7 @@ export default async function ProjectPage({
   const imageUrl = item.image
     ? new URL(item.image, SITE_URL).toString()
     : undefined;
+  const relatedServices = servicesForPortfolio(item.slug);
 
   // Article schema — E-E-A-T сигнал и помощь AI-движкам цитировать кейс
   const articleLd = {
@@ -213,6 +215,39 @@ export default async function ProjectPage({
                       className="h-auto w-full object-cover"
                     />
                   </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Технологии в проекте → ссылки на услуги */}
+          {relatedServices.length > 0 && (
+            <section className="container-site pb-14">
+              <h2 className="font-serif text-2xl md:text-3xl">
+                Технологии в <span className="italic text-accent">проекте</span>
+              </h2>
+              <p className="mt-3 max-w-2xl text-base text-text-muted">
+                Что использовалось при разработке. По каждой технологии — подробнее на странице услуги.
+              </p>
+              <div className="mt-6 grid gap-3 md:grid-cols-2">
+                {relatedServices.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/uslugi/${s.slug}`}
+                    className="group flex items-start gap-4 rounded-2xl border border-text/5 bg-bg-card p-5 transition hover:border-accent/30 hover:bg-bg-elevated"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-accent/40 text-sm text-accent">
+                      →
+                    </span>
+                    <div className="min-w-0">
+                      <div className="text-base font-medium text-text">
+                        {s.cardTitle}
+                      </div>
+                      <div className="mt-1 text-sm text-text-muted line-clamp-2">
+                        {s.cardSummary}
+                      </div>
+                    </div>
+                  </Link>
                 ))}
               </div>
             </section>
