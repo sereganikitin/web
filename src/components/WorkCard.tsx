@@ -37,7 +37,7 @@ export default function WorkCard({ p }: { p: PortfolioItem }) {
       onMouseEnter={onEnter}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="work-card group relative aspect-video overflow-hidden rounded-2xl border border-text/5 bg-bg-card"
+      className="work-card group relative aspect-video overflow-hidden rounded-2xl bg-bg-card"
     >
       {p.image ? (
         <div className="absolute inset-0">
@@ -70,7 +70,7 @@ export default function WorkCard({ p }: { p: PortfolioItem }) {
             </div>
           )}
         </div>
-        <div className="rounded-full border border-accent/60 bg-bg/60 px-3 py-1 text-[10px] uppercase tracking-wider text-accent">
+        <div className="rounded-full bg-bg/80 px-3 py-1 text-[10px] uppercase tracking-wider text-accent backdrop-blur">
           {p.category}
         </div>
       </div>

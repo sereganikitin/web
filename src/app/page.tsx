@@ -17,7 +17,7 @@ export const dynamic = "force-dynamic";
 export default function HomePage() {
   const c = getContent();
   const logos = listLogos();
-  const portfolio = listPortfolio({ publishedOnly: true });
+  const portfolio = listPortfolio({ publishedOnly: true }).slice(0, 4);
 
   // WebPage с speakable и lastReviewed — для голосовых ассистентов и AI.
   const webPageLd = {
