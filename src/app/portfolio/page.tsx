@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WorkCard from "@/components/WorkCard";
+import PortfolioFilter from "@/components/PortfolioFilter";
 import { getContent, listPortfolio } from "@/lib/content";
 
 export const dynamic = "force-dynamic";
@@ -59,11 +59,7 @@ export default function PortfolioIndex() {
           {items.length === 0 ? (
             <p className="mt-12 text-text-muted">Скоро здесь появятся проекты.</p>
           ) : (
-            <div className="mt-12 grid gap-4 md:grid-cols-2">
-              {items.map((p) => (
-                <WorkCard key={p.id} p={p} />
-              ))}
-            </div>
+            <PortfolioFilter items={items} />
           )}
         </section>
       </main>

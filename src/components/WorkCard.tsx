@@ -1,44 +1,9 @@
-"use client";
-
 import Link from "next/link";
-import { useRef } from "react";
 import type { PortfolioItem } from "@/lib/db";
 
-const MAX_TILT_DEG = 4;
-
 export default function WorkCard({ p }: { p: PortfolioItem }) {
-  const ref = useRef<HTMLElement>(null);
-
-  function onMove(e: React.MouseEvent<HTMLElement>) {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.setProperty("--ry", `${px * MAX_TILT_DEG}`);
-    el.style.setProperty("--rx", `${-py * MAX_TILT_DEG}`);
-  }
-
-  function onEnter() {
-    ref.current?.setAttribute("data-hovering", "true");
-  }
-
-  function onLeave() {
-    const el = ref.current;
-    if (!el) return;
-    el.removeAttribute("data-hovering");
-    el.style.setProperty("--rx", "0");
-    el.style.setProperty("--ry", "0");
-  }
-
   return (
-    <article
-      ref={ref}
-      onMouseEnter={onEnter}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      className="work-card group relative aspect-video overflow-hidden rounded-2xl bg-bg-card"
-    >
+    <article className="group relative aspect-video overflow-hidden rounded-2xl bg-bg">
       {p.image ? (
         <div className="absolute inset-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -70,7 +35,7 @@ export default function WorkCard({ p }: { p: PortfolioItem }) {
             </div>
           )}
         </div>
-        <div className="rounded-full bg-bg/80 px-3 py-1 text-[10px] uppercase tracking-wider text-accent backdrop-blur">
+        <div className="rounded-full bg-bg px-3 py-1.5 text-[10px] uppercase tracking-wider text-accent shadow-lg shadow-black/40">
           {p.category}
         </div>
       </div>
