@@ -71,12 +71,6 @@ export default function HeroPhoto({ src }: { src: string }) {
 
   return (
     <div className="hero-photo-wrap relative" ref={wrapRef}>
-      {/* Champagne glow подложка */}
-      <div
-        aria-hidden="true"
-        className="absolute -inset-10 -z-10 rounded-[3rem] bg-[radial-gradient(circle_at_center,_rgba(206,179,137,0.35)_0%,_rgba(206,179,137,0)_60%)] blur-2xl"
-      />
-
       <div
         ref={innerRef}
         className="hero-photo-frame relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[28px] bg-bg-card"

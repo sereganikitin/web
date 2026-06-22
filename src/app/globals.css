@@ -205,25 +205,22 @@ body {
     0 0 0 1px rgba(244, 241, 234, 0.06);
 }
 
-/* Hero photo frame — эффект защитного стекла:
-   - яркий хайлайт сверху-слева (где свет)
-   - тонкий accent-rim снаружи (бленд бевеля)
-   - тёмный inset снизу-справа (толщина стекла)
-   - дроп-shadow для левитации над фоном */
+/* Hero photo frame — отдельный слой как у popup'а:
+   тёплое dark drop-shadow, тонкий нейтральный rim, плюс
+   мягкие inset-блики (бевель стекла без champagne-окраски). */
 .hero-photo-frame {
   box-shadow:
-    /* drop под рамкой — мягкая большая тень */
-    0 40px 120px -20px rgba(0, 0, 0, 0.7),
-    0 18px 50px -15px rgba(0, 0, 0, 0.4),
-    /* outer rim — лёгкий champagne-ободок 1px (бевель стекла) */
-    0 0 0 1px rgba(206, 179, 137, 0.18),
-    /* inner top highlight — белый блик 1px по верхней грани */
-    inset 0 1px 0 rgba(255, 255, 255, 0.30),
-    /* inner sides — лёгкое выпячивание боков */
-    inset 1px 0 0 rgba(255, 255, 255, 0.10),
-    inset -1px 0 0 rgba(255, 255, 255, 0.06),
-    /* inner bottom — тонкая темная грань (толщина стекла) */
-    inset 0 -1px 0 rgba(0, 0, 0, 0.45);
+    /* drop — отдельный слой над страницей */
+    0 30px 80px -20px rgba(0, 0, 0, 0.65),
+    0 12px 36px -10px rgba(0, 0, 0, 0.35),
+    /* outer rim — нейтральный 1px */
+    0 0 0 1px rgba(244, 241, 234, 0.08),
+    /* inner top highlight — мягкий блик по верху */
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 1px 0 0 rgba(255, 255, 255, 0.06),
+    inset -1px 0 0 rgba(255, 255, 255, 0.04),
+    /* inner bottom — тонкая темная грань */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.40);
 }
 
 .hero-glow-drift-1 { animation: drift-1 18s ease-in-out infinite; }
