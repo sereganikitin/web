@@ -18,14 +18,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   // /admin/login renders without sidebar
   return (
     <html lang="ru">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+      <head />
+
       <body className="min-h-screen bg-bg text-text">
         {session ? (
           <div className="flex min-h-screen">
