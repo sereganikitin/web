@@ -101,16 +101,40 @@ body {
 .hero-glow-pos-3 { bottom: -180px; left: 35%; }
 
 .hero-glow {
-  width: 520px;
-  height: 520px;
+  width: 720px;
+  height: 720px;
   border-radius: 9999px;
   background: radial-gradient(circle at center, #ceb389 0%, rgba(206, 179, 137, 0) 60%);
-  filter: blur(70px);
-  opacity: 0.18;
+  filter: blur(90px);
+  opacity: 0.22;
   will-change: transform;
 }
-.hero-glow-pos-2 .hero-glow { width: 420px; height: 420px; opacity: 0.13; }
-.hero-glow-pos-3 .hero-glow { width: 360px; height: 360px; opacity: 0.10; }
+.hero-glow-pos-2 .hero-glow { width: 560px; height: 560px; opacity: 0.16; }
+.hero-glow-pos-3 .hero-glow { width: 480px; height: 480px; opacity: 0.13; }
+
+/* Hero photo: parallax-обёртка с soft champagne glow подложкой */
+.hero-photo {
+  position: relative;
+  border-radius: 9999px;
+  transform: translate3d(var(--tx, 0), var(--ty, 0), 0);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.hero-photo-glow {
+  position: absolute;
+  inset: -20%;
+  border-radius: 9999px;
+  background: radial-gradient(circle at center, rgba(206, 179, 137, 0.45) 0%, rgba(206, 179, 137, 0) 60%);
+  filter: blur(40px);
+  z-index: -1;
+  animation: float-slow 8s ease-in-out infinite;
+}
+.hero-photo-img {
+  border-radius: 9999px;
+  box-shadow:
+    0 30px 80px -20px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(244, 241, 234, 0.06);
+}
 
 .hero-glow-drift-1 { animation: drift-1 18s ease-in-out infinite; }
 .hero-glow-drift-2 { animation: drift-2 22s ease-in-out infinite; }
