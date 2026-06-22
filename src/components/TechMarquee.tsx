@@ -23,7 +23,7 @@ export default function TechMarquee() {
   return (
     <section
       aria-hidden="true"
-      className="relative mt-14 overflow-hidden border-y border-text/5 bg-bg-card/30 py-6 md:mt-20"
+      className="relative mt-6 overflow-hidden border-y border-text/5 bg-bg-card/30 py-4 md:mt-10"
     >
       <div className="marquee-mask">
         <div className="marquee-track flex w-max">

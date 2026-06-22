@@ -76,6 +76,7 @@ export default function HomePage() {
         />
         <ClientLogos logos={logos} />
         <TechMarquee />
+        <div className="-mt-8 md:-mt-12">
         <Reveal>
           <Services
             eyebrow={c["services.eyebrow"] ?? "Услуги"}
@@ -104,6 +105,7 @@ export default function HomePage() {
             ]}
           />
         </Reveal>
+        </div>
         <Reveal>
           <SelectedWork
             eyebrow={c["work.eyebrow"] ?? "Selected"}
