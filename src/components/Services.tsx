@@ -20,7 +20,7 @@ export default function Services({
   items: Service[];
 }) {
   return (
-    <section id="services" className="py-14 md:py-20">
+    <section id="services" className="pt-14 pb-7 md:pt-20 md:pb-10">
       <div className="container-site">
         <div className="mb-10 flex items-end justify-between">
           <div className="eyebrow">{eyebrow}</div>
