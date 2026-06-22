@@ -79,7 +79,7 @@ export default function HeroPhoto({ src }: { src: string }) {
 
       <div
         ref={innerRef}
-        className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl bg-bg-card shadow-[0_40px_120px_-20px_rgba(0,0,0,0.7)]"
+        className="hero-photo-frame relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[28px] bg-bg-card"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -90,18 +90,31 @@ export default function HeroPhoto({ src }: { src: string }) {
           style={{ willChange: "transform" }}
         />
 
-        {/* Угловые маркеры — рамка-видоискатель */}
-        <div className="pointer-events-none absolute inset-3">
-          <span className="absolute left-0 top-0 h-5 w-5 border-l border-t border-accent/60" />
-          <span className="absolute right-0 top-0 h-5 w-5 border-r border-t border-accent/60" />
-          <span className="absolute bottom-0 left-0 h-5 w-5 border-b border-l border-accent/60" />
-          <span className="absolute bottom-0 right-0 h-5 w-5 border-b border-r border-accent/60" />
-        </div>
-
-        {/* Тонкий шум/grain через repeating-linear-gradient — субтильно */}
+        {/* Стеклянный оверлей — top-left highlight + bottom-right tint */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-20"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 18%, transparent 38%, transparent 62%, rgba(0,0,0,0.18) 88%, rgba(0,0,0,0.30) 100%)",
+          }}
+        />
+
+        {/* Диагональная блик-полоса — как отражение на закалённом стекле */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(118deg, transparent 38%, rgba(255,255,255,0.10) 46%, rgba(255,255,255,0.16) 50%, rgba(255,255,255,0.10) 54%, transparent 62%)",
+            mixBlendMode: "screen",
+          }}
+        />
+
+        {/* Тонкий шум/grain */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-15"
           style={{
             backgroundImage:
               "repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 3px)",
