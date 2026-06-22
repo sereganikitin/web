@@ -45,7 +45,7 @@ export default function PortfolioIndex() {
 
           <div className="mt-10 flex flex-wrap items-end justify-between gap-6">
             <h1 className="font-serif text-4xl leading-tight md:text-6xl">
-              Все <span className="italic text-accent">работы</span>
+              Все <span className="text-accent">работы</span>
             </h1>
             <div className="text-base text-text-muted">
               Всего проектов: {items.length}

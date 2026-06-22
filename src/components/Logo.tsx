@@ -7,7 +7,7 @@ type Props = {
 export default function Logo({ className = "", size = "text-lg" }: Props) {
   return (
     <span
-      className={`relative inline-block font-serif italic leading-none text-accent ${size} ${className}`}
+      className={`relative inline-block font-serif leading-none text-accent ${size} ${className}`}
     >
       sn.
       <svg

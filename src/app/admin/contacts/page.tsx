@@ -29,7 +29,7 @@ export default function AdminContactsPage() {
   return (
     <div className="max-w-3xl">
       <h1 className="font-serif text-3xl">
-        <span className="italic text-accent">Контакты</span>
+        <span className="text-accent">Контакты</span>
       </h1>
       <p className="mt-2 text-text-muted">
         Способы связи и социальные сети.

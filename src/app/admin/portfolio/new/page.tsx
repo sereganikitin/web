@@ -4,7 +4,7 @@ export default function NewPortfolioPage() {
   return (
     <div className="max-w-3xl">
       <h1 className="font-serif text-3xl">
-        Новый <span className="italic text-accent">кейс</span>
+        Новый <span className="text-accent">кейс</span>
       </h1>
       <PortfolioForm
         initial={{

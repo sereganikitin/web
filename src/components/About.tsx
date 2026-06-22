@@ -30,7 +30,7 @@ export default function About({
           <div className="md:col-span-7">
             <div className="eyebrow mb-6">{eyebrow}</div>
             <h2 className="font-serif text-4xl leading-tight md:text-5xl">
-              <span className="italic text-accent">{title}</span>
+              <span className="text-accent">{title}</span>
             </h2>
             <p className="mt-6 max-w-xl whitespace-pre-line text-base leading-relaxed text-text-muted">
               {text}

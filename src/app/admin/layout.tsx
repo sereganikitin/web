@@ -25,7 +25,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <div className="flex min-h-screen">
             <aside className="hidden w-60 shrink-0 border-r border-text/5 bg-bg-card md:block">
               <div className="px-6 py-6">
-                <Link href="/" className="font-serif text-xl italic text-accent">
+                <Link href="/" className="font-serif text-xl text-accent">
                   sn. admin
                 </Link>
               </div>

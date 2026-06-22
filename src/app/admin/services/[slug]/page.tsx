@@ -15,7 +15,7 @@ export default async function AdminServiceEditPage({
   return (
     <div className="max-w-3xl">
       <h1 className="font-serif text-3xl">
-        Редактируем <span className="italic text-accent">{item.cardTitle || item.slug}</span>
+        Редактируем <span className="text-accent">{item.cardTitle || item.slug}</span>
       </h1>
       <ServiceForm initial={item} originalSlug={item.slug} />
     </div>

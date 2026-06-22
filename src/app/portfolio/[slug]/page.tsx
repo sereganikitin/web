@@ -132,7 +132,7 @@ export default async function ProjectPage({
                   <div className="eyebrow mb-3">{item.category}</div>
                 )}
                 <h1 className="font-serif text-5xl leading-tight md:text-7xl">
-                  <span className="italic text-accent">{item.title}</span>
+                  <span className="text-accent">{item.title}</span>
                 </h1>
                 {item.description && (
                   <p className="mt-6 max-w-xl text-base text-text-muted md:text-lg">
@@ -224,7 +224,7 @@ export default async function ProjectPage({
           {relatedServices.length > 0 && (
             <section className="container-site pb-14">
               <h2 className="font-serif text-2xl md:text-3xl">
-                Технологии в <span className="italic text-accent">проекте</span>
+                Технологии в <span className="text-accent">проекте</span>
               </h2>
               <p className="mt-3 max-w-2xl text-base text-text-muted">
                 Что использовалось при разработке. По каждой технологии — подробнее на странице услуги.
@@ -264,7 +264,7 @@ export default async function ProjectPage({
                     ← Предыдущий
                   </div>
                   <div className="mt-2 font-serif text-2xl">
-                    <span className="italic text-accent">{prev.title}</span>
+                    <span className="text-accent">{prev.title}</span>
                   </div>
                 </Link>
               ) : (
@@ -279,7 +279,7 @@ export default async function ProjectPage({
                     Следующий →
                   </div>
                   <div className="mt-2 font-serif text-2xl">
-                    <span className="italic text-accent">{next.title}</span>
+                    <span className="text-accent">{next.title}</span>
                   </div>
                 </Link>
               ) : (

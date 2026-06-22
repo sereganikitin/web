@@ -10,7 +10,7 @@ export default function AdminServicesListPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-serif text-3xl">
-            <span className="italic text-accent">Услуги</span>
+            <span className="text-accent">Услуги</span>
           </h1>
           <p className="mt-2 text-text-muted">Страницы раздела /uslugi.</p>
         </div>

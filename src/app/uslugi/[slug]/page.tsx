@@ -147,7 +147,7 @@ export default async function ServicePage({
           <header className="container-site mt-10 pb-10">
             <div className="eyebrow mb-4">{svc.eyebrow}</div>
             <h1 className="font-serif text-4xl leading-tight md:text-6xl">
-              <span className="italic text-accent">{svc.h1}</span>
+              <span className="text-accent">{svc.h1}</span>
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-text-muted">
               {svc.intro}
@@ -166,7 +166,7 @@ export default async function ServicePage({
           {/* Что входит */}
           <section className="container-site py-14">
             <h2 className="font-serif text-3xl md:text-4xl">
-              Что <span className="italic text-accent">входит</span>
+              Что <span className="text-accent">входит</span>
             </h2>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {svc.includes.map((item, i) => (
@@ -189,7 +189,7 @@ export default async function ServicePage({
           {/* Стоимость и сроки */}
           <section className="container-site py-14">
             <h2 className="font-serif text-3xl md:text-4xl">
-              Стоимость и <span className="italic text-accent">сроки</span>
+              Стоимость и <span className="text-accent">сроки</span>
             </h2>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               <div className="rounded-2xl border border-accent/30 bg-bg-card p-6">
@@ -218,7 +218,7 @@ export default async function ServicePage({
           {cases.length > 0 && (
             <section className="container-site py-14">
               <h2 className="font-serif text-3xl md:text-4xl">
-                Примеры <span className="italic text-accent">работ</span>
+                Примеры <span className="text-accent">работ</span>
               </h2>
               <div className="mt-8 grid gap-4 md:grid-cols-2">
                 {cases.map((p) => (
@@ -231,7 +231,7 @@ export default async function ServicePage({
                       {p.category}
                     </div>
                     <div className="mt-3 font-serif text-2xl">
-                      <span className="italic text-accent">{p.title}</span>
+                      <span className="text-accent">{p.title}</span>
                     </div>
                     {p.description && (
                       <p className="mt-2 text-base text-text-muted line-clamp-2">
@@ -247,7 +247,7 @@ export default async function ServicePage({
           {/* FAQ */}
           <section className="container-site py-14">
             <h2 className="font-serif text-3xl md:text-4xl">
-              Частые <span className="italic text-accent">вопросы</span>
+              Частые <span className="text-accent">вопросы</span>
             </h2>
             <div className="mt-8 space-y-3">
               {svc.faq.map((item, i) => (
@@ -276,7 +276,7 @@ export default async function ServicePage({
           {/* Смотрите также — другие услуги + кейсы */}
           <section className="container-site py-14">
             <h2 className="font-serif text-3xl md:text-4xl">
-              Смотрите <span className="italic text-accent">также</span>
+              Смотрите <span className="text-accent">также</span>
             </h2>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {otherServices.map((s) => (
@@ -289,7 +289,7 @@ export default async function ServicePage({
                     Услуга
                   </div>
                   <div className="mt-3 font-serif text-xl">
-                    <span className="italic text-accent">{s.cardTitle}</span>
+                    <span className="text-accent">{s.cardTitle}</span>
                   </div>
                   <p className="mt-2 text-sm text-text-muted line-clamp-2">
                     {s.cardSummary}
@@ -306,7 +306,7 @@ export default async function ServicePage({
                     Кейс · {p.category}
                   </div>
                   <div className="mt-3 font-serif text-xl">
-                    <span className="italic text-accent">{p.title}</span>
+                    <span className="text-accent">{p.title}</span>
                   </div>
                   {p.description && (
                     <p className="mt-2 text-sm text-text-muted line-clamp-2">
@@ -322,7 +322,7 @@ export default async function ServicePage({
           <section className="container-site py-14">
             <div className="rounded-2xl border border-accent/30 bg-bg-card p-8 md:p-12 text-center">
               <h2 className="font-serif text-3xl md:text-4xl">
-                Готовы <span className="italic text-accent">обсудить?</span>
+                Готовы <span className="text-accent">обсудить?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base text-text-muted">
                 Расскажите о задаче — отвечу в течение дня, посчитаю стоимость

@@ -8,7 +8,7 @@ export default async function AdminAccountPage() {
   return (
     <div className="max-w-xl">
       <h1 className="font-serif text-3xl">
-        <span className="italic text-accent">Аккаунт</span>
+        <span className="text-accent">Аккаунт</span>
       </h1>
       <p className="mt-2 text-text-muted">
         Текущий логин: <span className="text-text">{session?.login}</span>

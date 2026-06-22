@@ -47,7 +47,7 @@ function LendingBlock() {
   return (
     <section className="container-site py-14">
       <h2 className="font-serif text-3xl md:text-4xl">
-        Какие лендинги <span className="italic text-accent">делаю</span>
+        Какие лендинги <span className="text-accent">делаю</span>
       </h2>
       <p className="mt-4 max-w-2xl text-base text-text-muted">
         Подбираю структуру под цель, а не наоборот. Один шаблон не подходит ко
@@ -100,7 +100,7 @@ function ShopBlock() {
   return (
     <section className="container-site py-14">
       <h2 className="font-serif text-3xl md:text-4xl">
-        Платежи, доставка, <span className="italic text-accent">1С</span>
+        Платежи, доставка, <span className="text-accent">1С</span>
       </h2>
       <p className="mt-4 max-w-2xl text-base text-text-muted">
         Из коробки подключаю все популярные сервисы. Если нужного нет в списке —
@@ -129,7 +129,7 @@ function ShopBlock() {
 
       <div className="mt-8 rounded-2xl border border-text/5 bg-bg-card p-6 md:p-8">
         <h3 className="font-serif text-2xl">
-          На чём делать: <span className="italic text-accent">Next.js или WordPress?</span>
+          На чём делать: <span className="text-accent">Next.js или WordPress?</span>
         </h3>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
           <div>
@@ -185,7 +185,7 @@ function BotBlock() {
   return (
     <section className="container-site py-14">
       <h2 className="font-serif text-3xl md:text-4xl">
-        Сценарии <span className="italic text-accent">ботов</span>
+        Сценарии <span className="text-accent">ботов</span>
       </h2>
       <p className="mt-4 max-w-2xl text-base text-text-muted">
         Под каждый сценарий — своя архитектура. Иногда хватает простого
@@ -240,7 +240,7 @@ function CrmBlock() {
   return (
     <section className="container-site py-14">
       <h2 className="font-serif text-3xl md:text-4xl">
-        Подключаю <span className="italic text-accent">любую CRM</span> с API
+        Подключаю <span className="text-accent">любую CRM</span> с API
       </h2>
       <p className="mt-4 max-w-2xl text-base text-text-muted">
         Не привязан к одной системе. Беру ту, в которой работает ваша команда —

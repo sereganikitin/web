@@ -172,7 +172,7 @@ export default function AboutPage() {
             <div className="md:col-span-7">
               <div className="eyebrow mb-4">Обо мне</div>
               <h1 className="font-serif text-4xl leading-tight md:text-6xl">
-                <span className="italic text-accent">Сергей Никитин</span>
+                <span className="text-accent">Сергей Никитин</span>
               </h1>
               <div className="speakable mt-4 text-base text-text-muted">
                 Веб-разработчик из {LEGAL.city}а. Делаю сайты любой сложности,
@@ -214,7 +214,7 @@ export default function AboutPage() {
           {/* Стек */}
           <section className="mt-16" id="stack">
             <h2 className="font-serif text-3xl md:text-4xl">
-              Технологический <span className="italic text-accent">стек</span>
+              Технологический <span className="text-accent">стек</span>
             </h2>
             <p className="mt-4 max-w-2xl text-base text-text-muted">
               С чем работаю каждый день. Стек подбираю под задачу, а не наоборот.
@@ -235,7 +235,7 @@ export default function AboutPage() {
           {/* Принципы */}
           <section className="mt-16">
             <h2 className="font-serif text-3xl md:text-4xl">
-              Принципы <span className="italic text-accent">работы</span>
+              Принципы <span className="text-accent">работы</span>
             </h2>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {PRINCIPLES.map((p, i) => (
@@ -258,7 +258,7 @@ export default function AboutPage() {
           {/* HowTo: как заказать */}
           <section className="mt-16">
             <h2 className="font-serif text-3xl md:text-4xl">
-              Как <span className="italic text-accent">заказать сайт</span>
+              Как <span className="text-accent">заказать сайт</span>
             </h2>
             <p className="mt-4 max-w-2xl text-base text-text-muted">
               Пошаговый процесс от первого созвона до запуска. Старт — бесплатный
@@ -286,7 +286,7 @@ export default function AboutPage() {
           <section className="mt-16">
             <div className="rounded-2xl border border-accent/30 bg-bg-card p-8 text-center md:p-12">
               <h2 className="font-serif text-3xl md:text-4xl">
-                Готовы <span className="italic text-accent">обсудить проект?</span>
+                Готовы <span className="text-accent">обсудить проект?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base text-text-muted">
                 Расскажите о задаче — отвечу в течение дня, посчитаю стоимость

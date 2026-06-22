@@ -64,7 +64,7 @@ export default function ContentPage() {
   return (
     <div className="max-w-3xl">
       <h1 className="font-serif text-3xl">
-        Тексты <span className="italic text-accent">сайта</span>
+        Тексты <span className="text-accent">сайта</span>
       </h1>
       <p className="mt-2 text-text-muted">
         Редактирование текстов главной страницы и SEO.

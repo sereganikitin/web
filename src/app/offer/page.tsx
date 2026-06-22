@@ -35,7 +35,7 @@ export default function OfferPage() {
           </Link>
 
           <h1 className="mt-10 font-serif text-4xl leading-tight md:text-5xl">
-            Публичная <span className="italic text-accent">оферта</span>
+            Публичная <span className="text-accent">оферта</span>
           </h1>
           <p className="mt-4 text-sm text-text-dim">Редакция от {updated}</p>
 

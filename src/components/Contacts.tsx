@@ -27,7 +27,7 @@ export default function Contacts(p: Props) {
           <div className="md:col-span-5">
             <div className="eyebrow mb-6">{p.eyebrow}</div>
             <h2 className="font-serif text-4xl md:text-5xl">
-              <span className="italic text-accent">{p.title}</span>
+              <span className="text-accent">{p.title}</span>
             </h2>
             <p className="mt-6 max-w-md text-text-muted">{p.text}</p>
           </div>
@@ -61,7 +61,7 @@ export default function Contacts(p: Props) {
           <div className="md:col-span-5">
             <div className="eyebrow mb-4">Форма</div>
             <h3 className="font-serif text-2xl md:text-3xl">
-              Напишите <span className="italic text-accent">мне</span>
+              Напишите <span className="text-accent">мне</span>
             </h3>
             <p className="mt-4 max-w-md text-base text-text-muted">
               Расскажите о задаче — отвечу в течение дня.

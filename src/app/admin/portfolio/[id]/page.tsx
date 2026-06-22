@@ -25,7 +25,7 @@ export default async function EditPortfolioPage({
   return (
     <div className="max-w-3xl">
       <h1 className="font-serif text-3xl">
-        Редактировать <span className="italic text-accent">{item.title}</span>
+        Редактировать <span className="text-accent">{item.title}</span>
       </h1>
       <PortfolioForm
         initial={{

@@ -35,7 +35,7 @@ export default function PrivacyPage() {
           </Link>
 
           <h1 className="mt-10 font-serif text-4xl leading-tight md:text-5xl">
-            Политика обработки <span className="italic text-accent">персональных данных</span>
+            Политика обработки <span className="text-accent">персональных данных</span>
           </h1>
           <p className="mt-4 text-sm text-text-dim">Редакция от {updated}</p>
 

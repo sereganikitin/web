@@ -28,7 +28,7 @@ export default function WorkCard({ p }: { p: PortfolioItem }) {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-bg via-bg/70 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
         <div>
-          <div className="font-serif text-2xl">{p.title}</div>
+          <div className="font-serif text-3xl leading-tight md:text-4xl">{p.title}</div>
           {p.description && (
             <div className="mt-1 max-w-md text-base text-text-muted line-clamp-2">
               {p.description}

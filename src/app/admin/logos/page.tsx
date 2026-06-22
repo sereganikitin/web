@@ -8,7 +8,7 @@ export default function LogosPage() {
   return (
     <div className="max-w-3xl">
       <h1 className="font-serif text-3xl">
-        Логотипы <span className="italic text-accent">клиентов</span>
+        Логотипы <span className="text-accent">клиентов</span>
       </h1>
       <p className="mt-2 text-text-muted">
         Лента логотипов под hero-блоком. Лучше использовать SVG или PNG с прозрачным фоном.

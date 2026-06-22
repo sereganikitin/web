@@ -17,7 +17,7 @@ export default function SelectedWork({
         <div className="mb-10 flex items-end justify-between">
           <h2 className="font-serif text-4xl md:text-5xl">
             <span className="text-text">{eyebrow} </span>
-            <span className="italic text-accent">{title}</span>
+            <span className="text-accent">{title}</span>
           </h2>
           <Link
             href="/portfolio"

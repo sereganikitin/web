@@ -430,7 +430,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <section className="rounded-2xl border border-text/5 bg-bg-card p-6">
       <h2 className="font-serif text-xl">
-        <span className="italic text-accent">{title}</span>
+        <span className="text-accent">{title}</span>
       </h2>
       <div className="mt-4 space-y-4">{children}</div>
     </section>

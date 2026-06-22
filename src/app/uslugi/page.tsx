@@ -33,7 +33,7 @@ export default function UslugiIndex() {
         <section className="container-site pb-14 md:pb-20">
           <div className="eyebrow mb-6">Услуги</div>
           <h1 className="font-serif text-4xl leading-tight md:text-6xl">
-            Что я <span className="italic text-accent">делаю</span>
+            Что я <span className="text-accent">делаю</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-text-muted">
             Полный спектр услуг по web — от лендингов до крупных интернет-магазинов
@@ -52,7 +52,7 @@ export default function UslugiIndex() {
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <h2 className="mt-4 font-serif text-2xl">
-                  <span className="italic text-accent">{s.cardTitle}</span>
+                  <span className="text-accent">{s.cardTitle}</span>
                 </h2>
                 <p className="mt-3 text-base text-text-muted">{s.cardSummary}</p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-wider text-text-muted transition group-hover:text-accent">

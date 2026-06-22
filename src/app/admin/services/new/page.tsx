@@ -6,7 +6,7 @@ export default function AdminServiceNewPage() {
   return (
     <div className="max-w-3xl">
       <h1 className="font-serif text-3xl">
-        Новая <span className="italic text-accent">услуга</span>
+        Новая <span className="text-accent">услуга</span>
       </h1>
       <ServiceForm
         initial={{

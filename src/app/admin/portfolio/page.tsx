@@ -10,7 +10,7 @@ export default function PortfolioListPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="font-serif text-3xl">
-            <span className="italic text-accent">Портфолио</span>
+            <span className="text-accent">Портфолио</span>
           </h1>
           <p className="mt-2 text-text-muted">Кейсы в разделе Selected Work.</p>
         </div>

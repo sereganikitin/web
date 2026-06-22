@@ -42,8 +42,8 @@ export default function PopupCTA() {
             onClick={() => setExpanded(true)}
             className="block w-full pr-6 text-left"
           >
-            <h3 className="font-serif text-lg">
-              Обсудим <span className="italic text-accent">проект?</span>
+            <h3 className="text-lg font-medium">
+              Обсудим <span className="text-accent">проект?</span>
             </h3>
             <p className="mt-1 text-sm text-text-muted">
               Оставьте контакт — отвечу в течение дня.
@@ -54,8 +54,8 @@ export default function PopupCTA() {
           </button>
         ) : (
           <>
-            <h3 className="font-serif text-lg">
-              Обсудим <span className="italic text-accent">проект?</span>
+            <h3 className="text-lg font-medium">
+              Обсудим <span className="text-accent">проект?</span>
             </h3>
             <div className="mt-4">
               <LeadForm source="popup" variant="popup" onSuccess={dismiss} />

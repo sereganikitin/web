@@ -44,7 +44,7 @@ export default function AdminDashboard() {
   return (
     <div className="max-w-4xl">
       <h1 className="font-serif text-4xl">
-        <span className="italic text-accent">Админка</span>
+        <span className="text-accent">Админка</span>
       </h1>
       <p className="mt-2 text-text-muted">
         Управление контентом сайта web.cd-agency.ru.

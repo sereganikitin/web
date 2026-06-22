@@ -8,7 +8,7 @@ export default function AdminLeadsPage() {
   return (
     <div className="max-w-4xl">
       <h1 className="font-serif text-3xl">
-        <span className="italic text-accent">Заявки</span>
+        <span className="text-accent">Заявки</span>
       </h1>
       <p className="mt-2 text-text-muted">
         Заявки с контактной формы и попапа. Всего: {leads.length}.
