@@ -39,27 +39,29 @@ export default function Hero({
       <HeroGlow />
 
       <div className="container-site relative w-full">
-        <div className="grid items-center gap-12 md:grid-cols-12 lg:gap-16">
-          {/* Левая колонка: заголовок и CTA */}
-          <div className="md:col-span-7">
-            {eyebrow && (
-              <div className="mb-10 animate-fade-in-up">
-                <span className="inline-flex items-center gap-2 rounded-full border border-text/10 bg-bg-card/60 px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-text-muted backdrop-blur">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_2px_rgba(206,179,137,0.6)]" />
-                  {eyebrow}
-                </span>
-              </div>
-            )}
+        <div className="grid items-stretch gap-12 md:grid-cols-12 lg:gap-16">
+          {/* Левая колонка: текст сверху, CTA снизу — выравнено по фрейму фото */}
+          <div className="flex flex-col justify-between md:col-span-7">
+            <div>
+              {eyebrow && (
+                <div className="mb-10 animate-fade-in-up">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-text/10 bg-bg-card/60 px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-text-muted backdrop-blur">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_2px_rgba(206,179,137,0.6)]" />
+                    {eyebrow}
+                  </span>
+                </div>
+              )}
 
-            <h1 className="font-serif text-5xl leading-[0.95] tracking-tight sm:text-6xl md:text-6xl lg:text-8xl">
-              {title1}
-              {title1 && title2 ? " " : ""}
-              {title2 && <span className="text-accent">{title2}</span>}
-            </h1>
+              <h1 className="font-serif text-5xl leading-[0.95] tracking-tight sm:text-6xl md:text-6xl lg:text-8xl">
+                {title1}
+                {title1 && title2 ? " " : ""}
+                {title2 && <span className="text-accent">{title2}</span>}
+              </h1>
 
-            <p className="mt-8 max-w-xl text-base text-text-muted md:text-lg">
-              {subtitle}
-            </p>
+              <p className="mt-8 max-w-xl text-base text-text-muted md:text-lg">
+                {subtitle}
+              </p>
+            </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
