@@ -64,7 +64,7 @@ export default function Hero({
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
                 href={ctaHref}
-                className="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-sm font-medium uppercase tracking-wider text-bg shadow-2xl shadow-black/40 transition hover:bg-accent/90 hover:shadow-black/60"
+                className="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-4 text-sm font-medium uppercase tracking-wider text-bg shadow-lg shadow-black/40 transition hover:bg-accent/90 hover:shadow-black/60"
               >
                 {ctaLabel}
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-bg/15 text-bg transition group-hover:translate-x-0.5">

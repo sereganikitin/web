@@ -46,7 +46,7 @@ export default function UslugiIndex() {
               <Link
                 key={s.slug}
                 href={`/uslugi/${s.slug}`}
-                className="group rounded-2xl border border-text/10 bg-bg-card p-7 shadow-2xl shadow-black/40 transition hover:bg-bg-elevated hover:shadow-black/60"
+                className="group rounded-2xl border border-text/10 bg-bg-card p-7 shadow-lg shadow-black/40 transition hover:bg-bg-elevated hover:shadow-black/60"
               >
                 <div className="text-xs text-text-dim">
                   {String(i + 1).padStart(2, "0")}

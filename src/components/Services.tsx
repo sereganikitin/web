@@ -44,7 +44,7 @@ export default function Services({
               </>
             );
             const className =
-              "group block rounded-2xl border border-text/10 bg-bg-card p-7 shadow-2xl shadow-black/40 transition hover:bg-bg-elevated hover:shadow-black/60";
+              "group block rounded-2xl border border-text/10 bg-bg-card p-7 shadow-lg shadow-black/40 transition hover:bg-bg-elevated hover:shadow-black/60";
             return s.href ? (
               <Link key={i} href={s.href} className={className}>
                 {inner}

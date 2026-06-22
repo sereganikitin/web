@@ -210,9 +210,9 @@ body {
    мягкие inset-блики (бевель стекла без champagne-окраски). */
 .hero-photo-frame {
   box-shadow:
-    /* drop — отдельный слой над страницей */
-    0 30px 80px -20px rgba(0, 0, 0, 0.65),
-    0 12px 36px -10px rgba(0, 0, 0, 0.35),
+    /* drop — тонкий отдельный слой */
+    0 10px 25px -8px rgba(0, 0, 0, 0.55),
+    0 4px 12px -4px rgba(0, 0, 0, 0.30),
     /* outer rim — нейтральный 1px */
     0 0 0 1px rgba(244, 241, 234, 0.08),
     /* inner top highlight — мягкий блик по верху */

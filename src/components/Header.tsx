@@ -54,7 +54,7 @@ export default function Header() {
     <header className="fixed left-0 right-0 top-4 z-40 flex justify-center px-4">
       <nav
         className={`flex items-center gap-1 rounded-full border border-text/10 px-2 py-2 backdrop-blur-md transition ${
-          scrolled ? "bg-bg/80 shadow-2xl shadow-black/40" : "bg-bg-card/60"
+          scrolled ? "bg-bg/80 shadow-lg shadow-black/40" : "bg-bg-card/60"
         }`}
       >
         <a href="/" onClick={goTop} className="px-4" aria-label="На главную">
