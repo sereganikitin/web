@@ -8,6 +8,7 @@ import Contacts from "@/components/Contacts";
 import Footer from "@/components/Footer";
 import PopupCTA from "@/components/PopupCTA";
 import Reveal from "@/components/Reveal";
+import TechMarquee from "@/components/TechMarquee";
 import { getContent, listLogos, listPortfolio } from "@/lib/content";
 
 const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
@@ -54,6 +55,7 @@ export default function HomePage() {
           image={c["hero.image"] || undefined}
         />
         <ClientLogos logos={logos} />
+        <TechMarquee />
         <Reveal>
           <Services
             eyebrow={c["services.eyebrow"] ?? "Услуги"}
