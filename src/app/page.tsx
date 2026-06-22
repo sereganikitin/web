@@ -10,6 +10,26 @@ import PopupCTA from "@/components/PopupCTA";
 import Reveal from "@/components/Reveal";
 import TechMarquee from "@/components/TechMarquee";
 import { getContent, listLogos, listPortfolio } from "@/lib/content";
+import { getServiceBySlug } from "@/lib/services";
+
+// Технологические теги для оборотной стороны карточки услуги.
+const SERVICE_TAGS: Record<string, string[]> = {
+  lending: ["Next.js", "React", "Adaptive", "SEO"],
+  "internet-magazin": ["Next.js", "WordPress", "ЮKassa", "1С"],
+  "integraciya-crm": ["amoCRM", "Битрикс24", "REST/Webhooks"],
+  "telegram-bot": ["grammY", "aiogram", "Webhooks"],
+};
+
+function backsideFor(href: string | undefined) {
+  if (!href) return {};
+  const slug = href.replace(/^\/uslugi\//, "").replace(/\/$/, "");
+  const svc = getServiceBySlug(slug);
+  return {
+    tags: SERVICE_TAGS[slug] ?? svc?.cardKeywords?.slice(0, 3) ?? [],
+    price: svc?.pricing?.priceFrom,
+    deadline: svc?.pricing?.deadline,
+  };
+}
 
 const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
 
@@ -65,18 +85,21 @@ export default function HomePage() {
                 title: c["services.s1.title"] ?? "",
                 text: c["services.s1.text"] ?? "",
                 href: c["services.s1.href"] || "/uslugi/lending",
+                ...backsideFor(c["services.s1.href"] || "/uslugi/lending"),
               },
               {
                 num: c["services.s2.num"] ?? "02",
                 title: c["services.s2.title"] ?? "",
                 text: c["services.s2.text"] ?? "",
                 href: c["services.s2.href"] || "/uslugi/integraciya-crm",
+                ...backsideFor(c["services.s2.href"] || "/uslugi/integraciya-crm"),
               },
               {
                 num: c["services.s3.num"] ?? "03",
                 title: c["services.s3.title"] ?? "",
                 text: c["services.s3.text"] ?? "",
                 href: c["services.s3.href"] || "/uslugi/telegram-bot",
+                ...backsideFor(c["services.s3.href"] || "/uslugi/telegram-bot"),
               },
             ]}
           />

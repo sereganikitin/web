@@ -240,6 +240,46 @@ body {
   50%      { transform: translate3d(22px, -28px, 0); }
 }
 
+/* Flip-card услуг: лицевая ↔ обратная сторона при hover.
+   Только на устройствах с реальным hover (десктоп).
+   На тач-устройствах карточки остаются обычными ссылками. */
+.flip-card {
+  perspective: 1400px;
+}
+.flip-card-inner {
+  position: relative;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+@media (hover: none) {
+  /* Тач: оборот недоступен, прячем заднюю сторону, передняя — обычный flow. */
+  .flip-card-inner {
+    transform-style: flat;
+  }
+  .flip-card-face {
+    position: static;
+    backface-visibility: visible;
+  }
+  .flip-card-back {
+    display: none;
+  }
+}
+
 /* Tech marquee — бесшовная лента */
 .marquee-mask {
   -webkit-mask-image: linear-gradient(
