@@ -17,9 +17,11 @@ export default function HeroPhoto({ src }: { src: string }) {
     if (!wrap || !img || typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // Targets (куда стремимся) и current (актуальные значения с lerp-damping)
-    const t = { rotX: 0, rotY: 0, parX: 0, parY: 0, scroll: 0 };
-    const c = { rotX: 0, rotY: 0, parX: 0, parY: 0, scroll: 0 };
+    // Mouse-only parallax: tilt рамки + сдвиг картинки внутри.
+    // Scroll parallax намеренно убран — он создавал зазор внизу
+    // при возврате прокрутки, так как накапливался без сброса.
+    const t = { rotX: 0, rotY: 0, parX: 0, parY: 0 };
+    const c = { rotX: 0, rotY: 0, parX: 0, parY: 0 };
     let raf = 0;
 
     function tick() {
@@ -28,14 +30,12 @@ export default function HeroPhoto({ src }: { src: string }) {
       c.rotY += (t.rotY - c.rotY) * k;
       c.parX += (t.parX - c.parX) * k;
       c.parY += (t.parY - c.parY) * k;
-      c.scroll += (t.scroll - c.scroll) * 0.15;
 
       if (wrap) {
         wrap.style.transform = `perspective(1100px) rotateX(${c.rotX.toFixed(2)}deg) rotateY(${c.rotY.toFixed(2)}deg)`;
       }
       if (img) {
-        const totalY = c.parY - c.scroll * 0.18;
-        img.style.transform = `translate3d(${c.parX.toFixed(2)}px, ${totalY.toFixed(2)}px, 0) scale(1.12)`;
+        img.style.transform = `translate3d(${c.parX.toFixed(2)}px, ${c.parY.toFixed(2)}px, 0) scale(1.12)`;
       }
       raf = requestAnimationFrame(tick);
     }
@@ -45,9 +45,9 @@ export default function HeroPhoto({ src }: { src: string }) {
       const r = wrap.getBoundingClientRect();
       const nx = (e.clientX - r.left) / r.width - 0.5;
       const ny = (e.clientY - r.top) / r.height - 0.5;
-      t.rotX = -ny * 5; // наклон вверх/вниз
-      t.rotY = nx * 5; // влево/вправо
-      t.parX = nx * 12; // картинка плывёт в ту же сторону
+      t.rotX = -ny * 5;
+      t.rotY = nx * 5;
+      t.parX = nx * 12;
       t.parY = ny * 10;
     }
 
@@ -58,20 +58,13 @@ export default function HeroPhoto({ src }: { src: string }) {
       t.parY = 0;
     }
 
-    function onScroll() {
-      t.scroll = window.scrollY;
-    }
-
     wrap.addEventListener("mousemove", onMove);
     wrap.addEventListener("mouseleave", onLeave);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
     raf = requestAnimationFrame(tick);
 
     return () => {
       wrap.removeEventListener("mousemove", onMove);
       wrap.removeEventListener("mouseleave", onLeave);
-      window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -86,7 +79,7 @@ export default function HeroPhoto({ src }: { src: string }) {
 
       <div
         ref={innerRef}
-        className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-bg-card shadow-[0_40px_120px_-20px_rgba(0,0,0,0.7)]"
+        className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl bg-bg-card shadow-[0_40px_120px_-20px_rgba(0,0,0,0.7)]"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -105,12 +98,7 @@ export default function HeroPhoto({ src }: { src: string }) {
           <span className="absolute bottom-0 right-0 h-5 w-5 border-b border-r border-accent/60" />
         </div>
 
-        {/* Лейбл в углу */}
-        <div className="absolute right-4 top-4 rounded-full bg-bg/80 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-accent backdrop-blur">
-          Anno 2026
-        </div>
-
-        {/* Тонкий nоиз/grain через repeating-linear-gradient — субтильно */}
+        {/* Тонкий шум/grain через repeating-linear-gradient — субтильно */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-20"
