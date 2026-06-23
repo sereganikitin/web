@@ -175,7 +175,7 @@ export default function AboutPage() {
                 <span className="text-accent">Сергей Никитин</span>
               </h1>
               <div className="speakable mt-4 text-base text-text-muted">
-                Веб-разработчик из {LEGAL.city}а. Делаю сайты любой сложности,
+                Веб-разработчик из Москвы. Делаю сайты любой сложности,
                 Telegram-боты и интеграции — от первой строки кода до запуска
                 и поддержки.
               </div>
