@@ -26,7 +26,7 @@ export default function PopupCTA() {
 
   return (
     <div className="fixed bottom-4 right-4 z-50 w-[min(360px,calc(100vw-2rem))] animate-fade-in-up">
-      <div className="relative rounded-2xl border border-text/10 bg-bg-card p-5 shadow-lg shadow-black/60">
+      <div className="glass-card relative rounded-2xl p-5">
         <button
           type="button"
           onClick={dismiss}
