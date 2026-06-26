@@ -6,13 +6,13 @@ import CookieNotice from "@/components/CookieNotice";
 import { LEGAL } from "@/lib/legal";
 import { listServices } from "@/lib/services";
 
-const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
+const SITE_URL = process.env.SITE_URL ?? "https://cd-agency.ru";
 const YANDEX_METRIKA_ID = 109261322;
-// Я.Вебмастер допускает несколько верификационных кодов одновременно.
-// Можно переопределить через YANDEX_VERIFICATION в .env (через запятую).
+// Я.Вебмастер: код верификации. Можно переопределить через
+// YANDEX_VERIFICATION в .env (несколько кодов через запятую).
 const YANDEX_VERIFICATION = process.env.YANDEX_VERIFICATION
   ? process.env.YANDEX_VERIFICATION.split(",").map((s) => s.trim()).filter(Boolean)
-  : ["064aab0b765bcc56", "3f63f85a4c74acd0"];
+  : ["3f63f85a4c74acd0"];
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContent();

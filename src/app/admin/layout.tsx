@@ -8,6 +8,7 @@ const nav = [
   { href: "/admin/content", label: "Тексты" },
   { href: "/admin/services", label: "Услуги" },
   { href: "/admin/portfolio", label: "Портфолио" },
+  { href: "/admin/stars", label: "Звёзды" },
   { href: "/admin/logos", label: "Логотипы клиентов" },
   { href: "/admin/contacts", label: "Контакты" },
   { href: "/admin/account", label: "Аккаунт" },

@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = process.env.SITE_URL ?? "https://web.cd-agency.ru";
+  const base = process.env.SITE_URL ?? "https://cd-agency.ru";
 
   // Обычные правила + явное разрешение AI-ботам (для GEO — попадания
   // в рекомендации ChatGPT, Claude, Perplexity, Gemini, Я.GPT).
-  const adminDisallow = ["/admin", "/api"];
+  const adminDisallow = ["/admin", "/api", "/stars"];
 
   return {
     rules: [

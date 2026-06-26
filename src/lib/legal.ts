@@ -6,6 +6,6 @@ export const LEGAL = {
   ogrnip: "326774600363338",
   inn: "773004443404",
   email: "hello@cd-agency.ru",
-  site: "https://web.cd-agency.ru",
+  site: "https://cd-agency.ru",
   city: "Москва",
 } as const;

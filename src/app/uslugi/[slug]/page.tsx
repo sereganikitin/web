@@ -10,7 +10,7 @@ import ServiceUniqueBlock from "@/components/ServiceUniqueBlock";
 
 export const dynamic = "force-dynamic";
 
-const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
+const SITE_URL = process.env.SITE_URL ?? "https://cd-agency.ru";
 
 export function generateStaticParams() {
   return listServices().map((s) => ({ slug: s.slug }));

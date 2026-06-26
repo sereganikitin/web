@@ -3,7 +3,7 @@ import { listPortfolio } from "@/lib/content";
 import { listServices } from "@/lib/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.SITE_URL ?? "https://web.cd-agency.ru";
+  const base = process.env.SITE_URL ?? "https://cd-agency.ru";
   const now = new Date();
 
   const items = listPortfolio({ publishedOnly: true });

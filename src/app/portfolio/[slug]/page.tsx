@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { getContent, getPortfolioBySlug, listPortfolio } from "@/lib/content";
 import { servicesForPortfolio } from "@/lib/services";
 
-const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
+const SITE_URL = process.env.SITE_URL ?? "https://cd-agency.ru";
 
 export const dynamic = "force-dynamic";
 
