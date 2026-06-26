@@ -8,9 +8,11 @@ import { listServices } from "@/lib/services";
 
 const SITE_URL = process.env.SITE_URL ?? "https://web.cd-agency.ru";
 const YANDEX_METRIKA_ID = 109261322;
-// Хардкод как fallback на случай отсутствия переменной окружения,
-// можно переопределить через YANDEX_VERIFICATION в .env.
-const YANDEX_VERIFICATION = process.env.YANDEX_VERIFICATION ?? "064aab0b765bcc56";
+// Я.Вебмастер допускает несколько верификационных кодов одновременно.
+// Можно переопределить через YANDEX_VERIFICATION в .env (через запятую).
+const YANDEX_VERIFICATION = process.env.YANDEX_VERIFICATION
+  ? process.env.YANDEX_VERIFICATION.split(",").map((s) => s.trim()).filter(Boolean)
+  : ["064aab0b765bcc56", "3f63f85a4c74acd0"];
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContent();
@@ -61,7 +63,9 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
     authors: [{ name: "Сергей Никитин" }],
     creator: "Сергей Никитин",
-    verification: YANDEX_VERIFICATION ? { yandex: YANDEX_VERIFICATION } : undefined,
+    verification: YANDEX_VERIFICATION.length
+      ? { yandex: YANDEX_VERIFICATION.length === 1 ? YANDEX_VERIFICATION[0] : YANDEX_VERIFICATION }
+      : undefined,
     openGraph: {
       title,
       description,
