@@ -68,7 +68,7 @@ export default function Header() {
           >
             Сергей Никитин
           </a>
-          <ul className="hidden items-center gap-1 md:flex">
+          <ul className="hidden items-center gap-1 md:ml-auto md:flex">
             {links.map((l) => (
               <li key={l.id}>
                 <a
