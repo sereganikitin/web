@@ -130,6 +130,7 @@ export default function HomePage() {
             phone={c["contacts.phone"] ?? ""}
             telegram={c["contacts.telegram"] ?? ""}
             whatsapp={c["contacts.whatsapp"] ?? ""}
+            max={c["contacts.max"] ?? ""}
             github={c["contacts.github"] ?? ""}
           />
         </Reveal>

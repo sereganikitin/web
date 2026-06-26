@@ -104,6 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     sameAs: [
       c["contacts.telegram"],
       c["contacts.whatsapp"],
+      c["contacts.max"],
       c["contacts.github"],
     ].filter((v): v is string => Boolean(v && /^https?:\/\//.test(v))),
     email: c["contacts.email"] ? `mailto:${c["contacts.email"]}` : undefined,

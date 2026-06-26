@@ -8,6 +8,7 @@ type Props = {
   phone: string;
   telegram: string;
   whatsapp: string;
+  max: string;
   github: string;
 };
 
@@ -17,6 +18,7 @@ export default function Contacts(p: Props) {
     { label: "Телефон", value: p.phone, href: p.phone ? `tel:${p.phone.replace(/[^+\d]/g, "")}` : "" },
     { label: "Telegram", value: p.telegram, href: p.telegram, external: true },
     { label: "WhatsApp", value: p.whatsapp, href: p.whatsapp, external: true },
+    { label: "MAX", value: p.max, href: p.max, external: true },
     { label: "GitHub", value: p.github, href: p.github, external: true },
   ].filter((x) => x.value);
 

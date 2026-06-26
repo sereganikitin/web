@@ -19,6 +19,7 @@ const groups = [
       { key: "contacts.phone", label: "Телефон" },
       { key: "contacts.telegram", label: "Telegram (ссылка вида https://t.me/...)" },
       { key: "contacts.whatsapp", label: "WhatsApp (ссылка вида https://wa.me/...)" },
+      { key: "contacts.max", label: "MAX (ссылка вида https://max.ru/+79...)" },
       { key: "contacts.github", label: "GitHub" },
     ],
   },
