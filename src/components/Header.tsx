@@ -61,6 +61,13 @@ export default function Header() {
           <a href="/" onClick={goTop} className="px-4" aria-label="На главную">
             <Logo size="text-lg" />
           </a>
+          <a
+            href="/"
+            onClick={goTop}
+            className="font-serif text-sm uppercase tracking-wider text-text-muted transition hover:text-text md:hidden"
+          >
+            Сергей Никитин
+          </a>
           <ul className="hidden items-center gap-1 md:flex">
             {links.map((l) => (
               <li key={l.id}>
