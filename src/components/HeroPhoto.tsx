@@ -73,7 +73,7 @@ export default function HeroPhoto({ src }: { src: string }) {
     <div className="hero-photo-wrap relative" ref={wrapRef}>
       <div
         ref={innerRef}
-        className="hero-photo-frame relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[28px] bg-bg-card"
+        className="hero-photo-frame relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[28px] bg-bg-card md:ml-auto md:mr-0"
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
