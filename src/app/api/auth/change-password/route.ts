@@ -21,7 +21,7 @@ export async function POST(req: Request) {
   }
   if (next.length < MIN_LEN) {
     return NextResponse.json(
-      { error: `Минимальная длина пароля — ${MIN_LEN} символов` },
+      { error: `Минимальная длина пароля - ${MIN_LEN} символов` },
       { status: 400 }
     );
   }

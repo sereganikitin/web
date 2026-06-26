@@ -48,6 +48,21 @@ export type PortfolioItem = {
   updated_at: string;
 };
 
+export type Star = {
+  id: number;
+  slug: string;
+  name: string;
+  role: string;
+  text: string;
+  photo: string | null;
+  video: string | null;
+  video_embed: string | null;
+  position: number;
+  is_published: number;
+  created_at: string;
+  updated_at: string;
+};
+
 export type ClientLogo = {
   id: number;
   name: string;
@@ -72,7 +87,7 @@ export type Lead = {
   created_at: string;
 };
 
-// Service row — массивы/объекты хранятся как JSON-строки в TEXT-полях.
+// Service row - массивы/объекты хранятся как JSON-строки в TEXT-полях.
 // Раскрытие в ServiceContent делает lib/services.ts.
 export type ServiceRow = {
   slug: string;

@@ -23,13 +23,13 @@ function escapeHtml(s: string): string {
 export async function sendLeadTelegram(lead: Lead): Promise<void> {
   const cfg = readTelegramConfig();
   if (!cfg) {
-    console.warn("[telegram] not configured — skipping notification");
+    console.warn("[telegram] not configured - skipping notification");
     return;
   }
 
   const sourceLabel = lead.source === "popup" ? "Попап" : "Контактная форма";
   const text =
-    `<b>Новая заявка — ${escapeHtml(sourceLabel)}</b>\n\n` +
+    `<b>Новая заявка - ${escapeHtml(sourceLabel)}</b>\n\n` +
     `<b>Имя:</b> ${escapeHtml(lead.name)}\n` +
     `<b>Контакт:</b> ${escapeHtml(lead.contact)}\n` +
     (lead.message

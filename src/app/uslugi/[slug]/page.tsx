@@ -59,10 +59,10 @@ export default async function ServicePage({
     .map((s) => getPortfolioBySlug(s))
     .filter((p): p is NonNullable<typeof p> => Boolean(p && p.is_published));
 
-  // Связанные услуги — все, кроме текущей. Берём первые 3 в порядке массива.
+  // Связанные услуги - все, кроме текущей. Берём первые 3 в порядке массива.
   const otherServices = listServices().filter((s) => s.slug !== svc.slug).slice(0, 3);
 
-  // Дополнительные кейсы — из общего портфолио, не дубли с разделом «Примеры».
+  // Дополнительные кейсы - из общего портфолио, не дубли с разделом «Примеры».
   const caseIds = new Set(cases.map((c) => c.id));
   const moreCases = listPortfolio({ publishedOnly: true })
     .filter((p) => !caseIds.has(p.id))
@@ -273,7 +273,7 @@ export default async function ServicePage({
             </div>
           </section>
 
-          {/* Смотрите также — другие услуги + кейсы */}
+          {/* Смотрите также - другие услуги + кейсы */}
           <section className="container-site py-14">
             <h2 className="font-serif text-3xl md:text-4xl">
               Смотрите <span className="text-accent">также</span>
@@ -325,7 +325,7 @@ export default async function ServicePage({
                 Готовы <span className="text-accent">обсудить?</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-base text-text-muted">
-                Расскажите о задаче — отвечу в течение дня, посчитаю стоимость
+                Расскажите о задаче - отвечу в течение дня, посчитаю стоимость
                 и сроки. Это бесплатно и ни к чему не обязывает.
               </p>
               <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

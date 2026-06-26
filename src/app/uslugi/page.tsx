@@ -8,12 +8,12 @@ import { listServices } from "@/lib/services";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Услуги — разработка сайтов, Telegram-ботов и интеграций | Сергей Никитин",
+  title: "Услуги - разработка сайтов, Telegram-ботов и интеграций | Сергей Никитин",
   description:
     "Полный спектр услуг по web: разработка сайтов любой сложности, интернет-магазины, лендинги, Telegram-боты, интеграция с CRM. Москва. От 15 000 ₽.",
   alternates: { canonical: "/uslugi" },
   openGraph: {
-    title: "Услуги — Сергей Никитин",
+    title: "Услуги - Сергей Никитин",
     description:
       "Сайты, интернет-магазины, Telegram-боты, интеграции с CRM. Полный спектр услуг по web.",
     type: "website",
@@ -36,7 +36,7 @@ export default function UslugiIndex() {
             Что я <span className="text-accent">делаю</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base text-text-muted">
-            Полный спектр услуг по web — от лендингов до крупных интернет-магазинов
+            Полный спектр услуг по web - от лендингов до крупных интернет-магазинов
             и Telegram-ботов. Работаю с современным стеком (Next.js, React, Node.js,
             Python) и любыми CRM. Москва.
           </p>

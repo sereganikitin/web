@@ -10,7 +10,7 @@ export type ValidationResult = {
   normalized?: string;
   /** Сообщение об ошибке для пользователя. */
   error?: string;
-  /** Email домен — для серверной MX-проверки. */
+  /** Email домен - для серверной MX-проверки. */
   emailDomain?: string;
 };
 
@@ -19,7 +19,7 @@ export function detectContactKind(s: string): ContactKind {
   if (!t) return "other";
   if (/^https?:\/\/(t\.me|telegram\.me)\/[A-Za-z0-9_]{4,}/i.test(t)) return "telegram";
   if (/^@[A-Za-z0-9_]{4,32}$/.test(t)) return "telegram";
-  // single nickname без @ — только если в нём есть подчёркивания или это явно
+  // single nickname без @ - только если в нём есть подчёркивания или это явно
   // ник (короткие латинские слова без точек/цифр-плюсов)
   if (/^[A-Za-z][A-Za-z0-9_]{4,31}$/.test(t) && !t.includes(".")) return "telegram";
   if (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(t)) return "email";
@@ -87,9 +87,9 @@ export function validatePhone(s: string): ValidationResult {
 export function formatRuPhone(input: string): string {
   let digits = input.replace(/\D/g, "");
   if (digits.length === 0) return "";
-  // Если первая цифра 8 — заменяем на 7 (российский префикс)
+  // Если первая цифра 8 - заменяем на 7 (российский префикс)
   if (digits[0] === "8") digits = "7" + digits.slice(1);
-  // Если первая не 7 — считаем что пользователь ввёл без кода страны
+  // Если первая не 7 - считаем что пользователь ввёл без кода страны
   if (digits[0] !== "7") digits = "7" + digits;
   digits = digits.slice(0, 11);
 

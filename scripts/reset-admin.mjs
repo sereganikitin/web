@@ -1,7 +1,7 @@
 // Reset (or create) the admin user in data/site.db.
 // Defaults to login "admin" / password "admin". Override only via shell env:
 //   ADMIN_LOGIN=foo ADMIN_PASSWORD=bar node scripts/reset-admin.mjs
-// Intentionally does NOT read .env — this script's job is to reset to a known
+// Intentionally does NOT read .env - this script's job is to reset to a known
 // value, not to re-apply whatever password is sitting in .env.
 import { DatabaseSync } from "node:sqlite";
 import bcrypt from "bcryptjs";

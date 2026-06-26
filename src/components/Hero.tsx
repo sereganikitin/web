@@ -40,7 +40,7 @@ export default function Hero({
 
       <div className="container-site relative w-full">
         <div className="grid items-stretch gap-12 md:grid-cols-12 lg:gap-16">
-          {/* Левая колонка: текст сверху, CTA снизу — выравнено по фрейму фото */}
+          {/* Левая колонка: текст сверху, CTA снизу - выравнено по фрейму фото */}
           <div className="flex flex-col justify-between md:col-span-7">
             <div>
               {eyebrow && (

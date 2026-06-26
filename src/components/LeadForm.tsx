@@ -120,7 +120,7 @@ export default function LeadForm({ source, variant = "inline", onSuccess }: Prop
       >
         <div className="font-serif text-2xl text-accent">Спасибо!</div>
         <p className="mt-2 text-base text-text-muted">
-          Заявка отправлена — отвечу в течение дня.
+          Заявка отправлена - отвечу в течение дня.
         </p>
       </div>
     );

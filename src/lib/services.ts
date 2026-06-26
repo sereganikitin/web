@@ -3,7 +3,7 @@ import { db, type ServiceRow } from "./db";
 import { SERVICES as SEED, type ServiceContent } from "./services-content";
 
 // Override caseSlugs to always be a string[] (DB always returns array,
-// never undefined — proper match for forms and consumers).
+// never undefined - proper match for forms and consumers).
 export type Service = Omit<ServiceContent, "caseSlugs"> & {
   position: number;
   caseSlugs: string[];
@@ -121,7 +121,7 @@ export function createService(s: Service): void {
 }
 
 export function updateService(originalSlug: string, s: Service): void {
-  // slug can change — UPDATE matches by original slug then writes new values.
+  // slug can change - UPDATE matches by original slug then writes new values.
   const setClause = COLUMNS.map((c) => `${c} = ?`).join(", ");
   db.prepare(
     `UPDATE services SET ${setClause}, updated_at = CURRENT_TIMESTAMP WHERE slug = ?`
@@ -132,7 +132,7 @@ export function deleteService(slug: string): void {
   db.prepare("DELETE FROM services WHERE slug = ?").run(slug);
 }
 
-// Обратная связка: для кейса из портфолио — список услуг, где он
+// Обратная связка: для кейса из портфолио - список услуг, где он
 // фигурирует в caseSlugs. Используется в блоке «Технологии в проекте»
 // на /portfolio/[slug].
 export function servicesForPortfolio(portfolioSlug: string): Service[] {

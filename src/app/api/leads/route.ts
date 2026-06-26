@@ -77,7 +77,7 @@ export async function POST(req: Request) {
     );
   }
 
-  // DNS MX-проверка домена email — отлавливает опечатки и фейки.
+  // DNS MX-проверка домена email - отлавливает опечатки и фейки.
   if (ev.emailDomain) {
     const exists = await emailDomainExists(ev.emailDomain);
     if (!exists) {

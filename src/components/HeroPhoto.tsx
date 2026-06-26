@@ -8,9 +8,9 @@ export default function HeroPhoto({ src }: { src: string }) {
   const imgRef = useRef<HTMLImageElement>(null);
 
   // Эффекты:
-  // 1) Mouse tilt — wrapper наклоняется за курсором (perspective + rotate3d).
-  // 2) Mouse parallax — картинка внутри сдвигается на ±10px.
-  // 3) Scroll parallax — на скролле картинка ползёт чуть медленнее (-20%).
+  // 1) Mouse tilt - wrapper наклоняется за курсором (perspective + rotate3d).
+  // 2) Mouse parallax - картинка внутри сдвигается на ±10px.
+  // 3) Scroll parallax - на скролле картинка ползёт чуть медленнее (-20%).
   useEffect(() => {
     const wrap = wrapRef.current;
     const img = imgRef.current;
@@ -18,7 +18,7 @@ export default function HeroPhoto({ src }: { src: string }) {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     // Mouse-only parallax: tilt рамки + сдвиг картинки внутри.
-    // Scroll parallax намеренно убран — он создавал зазор внизу
+    // Scroll parallax намеренно убран - он создавал зазор внизу
     // при возврате прокрутки, так как накапливался без сброса.
     const t = { rotX: 0, rotY: 0, parX: 0, parY: 0 };
     const c = { rotX: 0, rotY: 0, parX: 0, parY: 0 };
@@ -84,7 +84,7 @@ export default function HeroPhoto({ src }: { src: string }) {
           style={{ willChange: "transform" }}
         />
 
-        {/* Стеклянный оверлей — top-left highlight + bottom-right tint */}
+        {/* Стеклянный оверлей - top-left highlight + bottom-right tint */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -94,7 +94,7 @@ export default function HeroPhoto({ src }: { src: string }) {
           }}
         />
 
-        {/* Диагональная блик-полоса — как отражение на закалённом стекле */}
+        {/* Диагональная блик-полоса - как отражение на закалённом стекле */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"

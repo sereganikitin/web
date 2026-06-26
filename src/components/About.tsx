@@ -24,7 +24,7 @@ export default function About({
                   alt={title}
                   className="absolute inset-0 h-full w-full scale-110 object-cover grayscale"
                 />
-                {/* Стеклянный оверлей — top-left highlight */}
+                {/* Стеклянный оверлей - top-left highlight */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0"

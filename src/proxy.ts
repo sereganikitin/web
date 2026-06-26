@@ -21,7 +21,7 @@ export async function proxy(req: NextRequest) {
 }
 
 function redirectToLogin(req: NextRequest) {
-  // Клонируем req.nextUrl — он содержит правильный proto/host
+  // Клонируем req.nextUrl - он содержит правильный proto/host
   // (Next подставляет их из Host/X-Forwarded-Host заголовков),
   // и меняем путь. NextResponse.redirect ждёт абсолютный URL,
   // а голый Location-string с относительным путём ломает Next 16

@@ -19,7 +19,7 @@ const TECHS = [
 
 export default function TechMarquee() {
   // Бесшовная лента: список дублируется ровно вдвое, трек анимируется
-  // от 0 до translateX(-50%) — на стыке копия совпадает с началом первой.
+  // от 0 до translateX(-50%) - на стыке копия совпадает с началом первой.
   return (
     <section
       aria-hidden="true"

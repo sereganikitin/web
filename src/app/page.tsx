@@ -40,13 +40,13 @@ export default function HomePage() {
   const logos = listLogos();
   const portfolio = listPortfolio({ publishedOnly: true }).slice(0, 4);
 
-  // WebPage с speakable и lastReviewed — для голосовых ассистентов и AI.
+  // WebPage с speakable и lastReviewed - для голосовых ассистентов и AI.
   const webPageLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": `${SITE_URL}/#webpage`,
     url: SITE_URL,
-    name: c["site.title"] ?? "Сергей Никитин — веб-разработка",
+    name: c["site.title"] ?? "Сергей Никитин - веб-разработка",
     description: c["site.description"] ?? undefined,
     inLanguage: "ru-RU",
     isPartOf: { "@id": `${SITE_URL}/#website` },

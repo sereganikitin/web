@@ -28,7 +28,7 @@ export async function generateMetadata({
   const item = getPortfolioBySlug(slug);
   if (!item) return { title: "Проект не найден" };
   return {
-    title: `${item.title} — Сергей Никитин`,
+    title: `${item.title} - Сергей Никитин`,
     description: item.description || undefined,
     alternates: { canonical: `/portfolio/${item.slug}` },
     openGraph: {
@@ -72,7 +72,7 @@ export default async function ProjectPage({
     : undefined;
   const relatedServices = servicesForPortfolio(item.slug);
 
-  // Article schema — E-E-A-T сигнал и помощь AI-движкам цитировать кейс
+  // Article schema - E-E-A-T сигнал и помощь AI-движкам цитировать кейс
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -94,7 +94,7 @@ export default async function ProjectPage({
     about: item.client || undefined,
   };
 
-  // BreadcrumbList — структурные хлебные крошки для поиска и AI
+  // BreadcrumbList - структурные хлебные крошки для поиска и AI
   const breadcrumbsLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -211,7 +211,7 @@ export default async function ProjectPage({
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={src}
-                      alt={`${item.title} — ${i + 1}`}
+                      alt={`${item.title} - ${i + 1}`}
                       className="h-auto w-full object-cover"
                     />
                   </div>
@@ -227,7 +227,7 @@ export default async function ProjectPage({
                 Технологии в <span className="text-accent">проекте</span>
               </h2>
               <p className="mt-3 max-w-2xl text-base text-text-muted">
-                Что использовалось при разработке. По каждой технологии — подробнее на странице услуги.
+                Что использовалось при разработке. По каждой технологии - подробнее на странице услуги.
               </p>
               <div className="mt-6 grid gap-3 md:grid-cols-2">
                 {relatedServices.map((s) => (

@@ -49,7 +49,7 @@ export default function PortfolioListPage() {
                       )}
                     </div>
                     <div className="text-xs text-text-muted">
-                      {p.category || "—"} · позиция {p.position}
+                      {p.category || "-"} · позиция {p.position}
                     </div>
                   </div>
                   <span className="text-text-dim">→</span>

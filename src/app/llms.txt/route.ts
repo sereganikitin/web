@@ -6,7 +6,7 @@ const SITE_URL = process.env.SITE_URL ?? "https://cd-agency.ru";
 
 export const dynamic = "force-dynamic";
 
-// llms.txt — стандарт описания сайта для AI-агентов (ChatGPT, Claude,
+// llms.txt - стандарт описания сайта для AI-агентов (ChatGPT, Claude,
 // Perplexity, Gemini, Yandex GPT). Структурированный маркдаун с ключевой
 // информацией. https://llmstxt.org/
 export async function GET() {
@@ -14,7 +14,7 @@ export async function GET() {
   const services = listServices();
 
   const lines: string[] = [];
-  lines.push(`# Сергей Никитин — веб-разработчик в Москве`);
+  lines.push(`# Сергей Никитин - веб-разработчик в Москве`);
   lines.push(``);
   lines.push(
     `> ${LEGAL.entity}. Разработка сайтов любой сложности на современном стеке (Next.js, React, Node.js, Python, TypeScript). Лендинги, корпоративные сайты, интернет-магазины, Telegram-боты, интеграции с CRM. Москва.`
@@ -47,13 +47,13 @@ export async function GET() {
   for (const p of portfolio) {
     const url = `${SITE_URL}/portfolio/${p.slug}`;
     const linkPart = p.link ? ` (живой сайт: ${p.link})` : "";
-    lines.push(`- **[${p.title}](${url})** — ${p.category}. ${p.description}${linkPart}`);
+    lines.push(`- **[${p.title}](${url})** - ${p.category}. ${p.description}${linkPart}`);
   }
   lines.push(``);
   lines.push(`## Ключевые страницы`);
   lines.push(``);
-  lines.push(`- [Главная](${SITE_URL}/) — обзор услуг и портфолио`);
-  lines.push(`- [Все услуги](${SITE_URL}/uslugi) — индекс направлений`);
+  lines.push(`- [Главная](${SITE_URL}/) - обзор услуг и портфолио`);
+  lines.push(`- [Все услуги](${SITE_URL}/uslugi) - индекс направлений`);
   lines.push(`- [Политика конфиденциальности](${SITE_URL}/privacy)`);
   lines.push(`- [Публичная оферта](${SITE_URL}/offer)`);
   lines.push(``);

@@ -310,7 +310,7 @@ export default function PortfolioForm({ initial }: { initial: PortfolioFormItem 
 
       <Section title="Публикация">
         <div className="grid grid-cols-2 gap-4">
-          <Field label="Позиция (меньше — выше)">
+          <Field label="Позиция (меньше - выше)">
             <input
               type="number"
               value={v.position}

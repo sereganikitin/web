@@ -28,7 +28,7 @@ export default function Header() {
     return (e: React.MouseEvent) => {
       setOpen(false);
       if (onHome) {
-        // На главной — плавный скролл к якорю без перезагрузки/смены URL.
+        // На главной - плавный скролл к якорю без перезагрузки/смены URL.
         e.preventDefault();
         const target = document.getElementById(id);
         if (target) {
@@ -37,7 +37,7 @@ export default function Header() {
           window.location.hash = id;
         }
       }
-      // На подстранице — стандартный переход браузера по href="/#id",
+      // На подстранице - стандартный переход браузера по href="/#id",
       // он сам перейдёт на главную и доскроллит к нужной секции.
     };
   }
@@ -47,7 +47,7 @@ export default function Header() {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-    // На подстранице — стандартный переход по href="/"
+    // На подстранице - стандартный переход по href="/"
   }
 
   return (

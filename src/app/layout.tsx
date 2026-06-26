@@ -16,7 +16,7 @@ const YANDEX_VERIFICATION = process.env.YANDEX_VERIFICATION
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContent();
-  const title = c["site.title"] ?? "Сергей Никитин — веб-разработчик в Москве";
+  const title = c["site.title"] ?? "Сергей Никитин - веб-разработчик в Москве";
   const description =
     c["site.description"] ??
     "Разработка сайтов любой сложности в Москве: лендинги, визитки, корпоративные сайты, интернет-магазины, Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web.";
@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const c = getContent();
   const services = listServices();
 
-  // Person: E-E-A-T сигналы — экспертиза, специализации, контакты, аффилиация
+  // Person: E-E-A-T сигналы - экспертиза, специализации, контакты, аффилиация
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -142,20 +142,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@type": "WebSite",
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
-    name: c["site.title"] ?? "Сергей Никитин — веб-разработка",
+    name: c["site.title"] ?? "Сергей Никитин - веб-разработка",
     description: c["site.description"] ?? undefined,
     inLanguage: "ru-RU",
     publisher: { "@id": `${SITE_URL}/#person` },
   };
 
-  // ProfessionalService с офертой — главный schema для классического SEO
+  // ProfessionalService с офертой - главный schema для классического SEO
   // и GEO: AI-движки используют этот блок чтобы рассказывать о специалисте.
   const professionalServiceLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#business`,
     name: LEGAL.entity,
-    alternateName: "Сергей Никитин — веб-разработка",
+    alternateName: "Сергей Никитин - веб-разработка",
     url: SITE_URL,
     image: c["hero.image"] ? new URL(c["hero.image"], SITE_URL).toString() : undefined,
     description: c["site.description"] ?? undefined,

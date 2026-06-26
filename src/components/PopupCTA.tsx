@@ -46,7 +46,7 @@ export default function PopupCTA() {
               Обсудим <span className="text-accent">проект?</span>
             </h3>
             <p className="mt-1 text-sm text-text-muted">
-              Оставьте контакт — отвечу в течение дня.
+              Оставьте контакт - отвечу в течение дня.
             </p>
             <span className="mt-3 inline-block text-xs uppercase tracking-wider text-accent">
               Написать →

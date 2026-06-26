@@ -66,7 +66,7 @@ function ServiceCard({ s }: { s: Service }) {
     </>
   );
 
-  // Если backside-данных нет — обычная карточка-ссылка без flip.
+  // Если backside-данных нет - обычная карточка-ссылка без flip.
   if (!hasFlip) {
     return s.href ? (
       <Link href={s.href} className={cardCls}>

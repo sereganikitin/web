@@ -23,8 +23,8 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "некорректный URL" }, { status: 400 });
   }
 
-  // Microlink free API — без ключа лимиты ~50 req/day/IP, кешируется ими по URL.
-  // waitUntil=networkidle0 + waitFor=4000ms — даём странице догрузить шрифты,
+  // Microlink free API - без ключа лимиты ~50 req/day/IP, кешируется ими по URL.
+  // waitUntil=networkidle0 + waitFor=4000ms - даём странице догрузить шрифты,
   // картинки и hero-анимации перед снимком.
   const microUrl =
     "https://api.microlink.io?" +

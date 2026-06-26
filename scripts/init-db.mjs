@@ -50,6 +50,21 @@ CREATE TABLE IF NOT EXISTS portfolio (
   updated_at   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE IF NOT EXISTS stars (
+  id           INTEGER PRIMARY KEY AUTOINCREMENT,
+  slug         TEXT NOT NULL UNIQUE,
+  name         TEXT NOT NULL,
+  role         TEXT NOT NULL DEFAULT '',
+  text         TEXT NOT NULL DEFAULT '',
+  photo        TEXT,
+  video        TEXT,
+  video_embed  TEXT,
+  position     INTEGER NOT NULL DEFAULT 0,
+  is_published INTEGER NOT NULL DEFAULT 1,
+  created_at   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE IF NOT EXISTS client_logos (
   id       INTEGER PRIMARY KEY AUTOINCREMENT,
   name     TEXT NOT NULL,
@@ -105,7 +120,7 @@ ensureCol("client", "client TEXT NOT NULL DEFAULT ''");
 ensureCol("year", "year TEXT NOT NULL DEFAULT ''");
 
 const defaults = {
-  "site.title": "Сергей Никитин — веб-разработчик в Москве",
+  "site.title": "Сергей Никитин - веб-разработчик в Москве",
   "site.description":
     "Разработка сайтов любой сложности в Москве: лендинги, визитки, корпоративные сайты, интернет-магазины, Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web.",
 
@@ -113,7 +128,7 @@ const defaults = {
   "hero.title_line1": "Сайты любой",
   "hero.title_line2": "сложности",
   "hero.subtitle":
-    "Лендинги, корпоративные сайты, интернет-магазины и Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web — недорого и под ключ.",
+    "Лендинги, корпоративные сайты, интернет-магазины и Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web - недорого и под ключ.",
   "hero.cta_label": "Мои услуги",
   "hero.cta_href": "#services",
   "hero.image": "",
@@ -122,7 +137,7 @@ const defaults = {
   "services.s1.num": "01",
   "services.s1.title": "Сайты под ключ",
   "services.s1.text":
-    "Лендинги, сайты-визитки, корпоративные сайты и интернет-магазины. Разработка с нуля на Next.js, React, Python — от проектирования до запуска и поддержки. Можно недорого.",
+    "Лендинги, сайты-визитки, корпоративные сайты и интернет-магазины. Разработка с нуля на Next.js, React, Python - от проектирования до запуска и поддержки. Можно недорого.",
   "services.s2.num": "02",
   "services.s2.title": "Интеграции и API",
   "services.s2.text":
@@ -130,7 +145,7 @@ const defaults = {
   "services.s3.num": "03",
   "services.s3.title": "Telegram-боты",
   "services.s3.text":
-    "Боты для приёма заявок, продаж, поддержки и автоматизации. Связка с сайтом и CRM. Полный спектр услуг по web — на одном стеке.",
+    "Боты для приёма заявок, продаж, поддержки и автоматизации. Связка с сайтом и CRM. Полный спектр услуг по web - на одном стеке.",
 
   "work.eyebrow": "Selected",
   "work.title": "Работы",
@@ -138,12 +153,12 @@ const defaults = {
   "about.eyebrow": "Обо мне",
   "about.title": "Сергей Никитин",
   "about.text":
-    "Веб-разработчик из Москвы. Делаю сайты любой сложности — от лендингов до e-commerce и Telegram-ботов. Работаю с современным стеком: Next.js, React, Node.js, Python, TypeScript, базы данных, облачные сервисы. Подключаю CRM-системы и платёжные сервисы. Беру задачи под ключ — от идеи до продакшена и поддержки.",
+    "Веб-разработчик из Москвы. Делаю сайты любой сложности - от лендингов до e-commerce и Telegram-ботов. Работаю с современным стеком: Next.js, React, Node.js, Python, TypeScript, базы данных, облачные сервисы. Подключаю CRM-системы и платёжные сервисы. Беру задачи под ключ - от идеи до продакшена и поддержки.",
 
   "contacts.eyebrow": "Контакты",
   "contacts.title": "Свяжитесь со мной",
   "contacts.text":
-    "Готов обсудить ваш проект. Напишите удобным способом — отвечу в течение дня.",
+    "Готов обсудить ваш проект. Напишите удобным способом - отвечу в течение дня.",
   "contacts.email": "hello@cd-agency.ru",
   "contacts.phone": "+7 (000) 000-00-00",
   "contacts.telegram": "https://t.me/",
@@ -172,6 +187,22 @@ if (portfolioCount.c === 0) {
   for (const s of samples) insert.run(...s);
 }
 
+const starsCount = db.prepare("SELECT COUNT(*) as c FROM stars").get();
+if (starsCount.c === 0) {
+  const insertStar = db.prepare(
+    "INSERT INTO stars (slug, name, role, text, position) VALUES (?, ?, ?, ?, ?)"
+  );
+  const starSamples = [
+    ["erik-davidovich", "Эрик Давидович", "Российский автоблогер", "", 1],
+    ["doma", "DOMA", "Музыкальный лейбл GUFа", "", 2],
+    ["mark-gorobets", "Марк Горобец", "Кинорежиссёр", "", 3],
+    ["anatoliy-sulyanov", "Анатолий Сульянов", "Предприниматель, продюсер, создатель медиа", "", 4],
+    ["kseniya", "Ксения", "Инвестор, дизайнер интерьеров", "", 5],
+  ];
+  for (const s of starSamples) insertStar.run(...s);
+  console.log(`Seeded ${starSamples.length} stars.`);
+}
+
 const adminLogin = process.env.ADMIN_LOGIN || "admin";
 const adminPassword = process.env.ADMIN_PASSWORD || "admin";
 const existing = db
@@ -185,7 +216,7 @@ if (!existing) {
   );
   console.log(`Admin user "${adminLogin}" created.`);
 } else {
-  console.log(`Admin user "${adminLogin}" already exists — skipped.`);
+  console.log(`Admin user "${adminLogin}" already exists - skipped.`);
 }
 
 console.log("Database initialized at:", path.join(DATA_DIR, "site.db"));

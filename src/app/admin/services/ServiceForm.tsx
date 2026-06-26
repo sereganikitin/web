@@ -25,7 +25,7 @@ export type ServiceFormData = {
 
 type Props = {
   initial: ServiceFormData;
-  /** Если задан — редактирование существующей записи. Иначе создание новой. */
+  /** Если задан - редактирование существующей записи. Иначе создание новой. */
   originalSlug?: string;
 };
 

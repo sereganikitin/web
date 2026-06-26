@@ -8,12 +8,12 @@ import { getContent, listPortfolio } from "@/lib/content";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Работы — портфолио веб-разработчика Сергея Никитина",
+  title: "Работы - портфолио веб-разработчика Сергея Никитина",
   description:
     "Все мои проекты: сайты, интернет-магазины, личные кабинеты, Telegram-боты и интеграции. Москва.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
-    title: "Работы — Сергей Никитин",
+    title: "Работы - Сергей Никитин",
     description: "Все мои проекты: сайты, e-commerce, личные кабинеты, боты, интеграции.",
     type: "website",
     locale: "ru_RU",
@@ -53,7 +53,7 @@ export default function PortfolioIndex() {
           </div>
           <p className="mt-4 max-w-2xl text-base text-text-muted">
             Сайты, интернет-магазины, личные кабинеты, Telegram-боты и интеграции.
-            Каждый кейс — с задачей, решением и стеком.
+            Каждый кейс - с задачей, решением и стеком.
           </p>
 
           {items.length === 0 ? (

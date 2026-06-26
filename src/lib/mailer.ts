@@ -40,7 +40,7 @@ function escapeHtml(s: string): string {
 export async function sendLeadNotification(lead: Lead): Promise<void> {
   const cfg = readSmtpConfig();
   if (!cfg) {
-    console.warn("[mailer] SMTP not configured — skipping notification");
+    console.warn("[mailer] SMTP not configured - skipping notification");
     return;
   }
 
@@ -52,7 +52,7 @@ export async function sendLeadNotification(lead: Lead): Promise<void> {
   });
 
   const sourceLabel = lead.source === "popup" ? "Попап" : "Контактная форма";
-  const subject = `Новая заявка с web.cd-agency.ru — ${sourceLabel}`;
+  const subject = `Новая заявка с web.cd-agency.ru - ${sourceLabel}`;
   const text = [
     `Источник: ${sourceLabel}`,
     `Имя: ${lead.name}`,

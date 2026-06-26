@@ -1,4 +1,4 @@
-// Уникальная секция, своя для каждой услуги — чтобы Яндекс не считал
+// Уникальная секция, своя для каждой услуги - чтобы Яндекс не считал
 // страницы шаблонным дублем. Контент специфичный, без копи-паста.
 
 type Props = { slug: string };
@@ -24,7 +24,7 @@ const LANDING_TYPES = [
   {
     name: "Продуктовый",
     text:
-      "Оффер на первом экране, фичи, социальные доказательства, тарифы, FAQ, форма. Цель — продать продукт или услугу.",
+      "Оффер на первом экране, фичи, социальные доказательства, тарифы, FAQ, форма. Цель - продать продукт или услугу.",
   },
   {
     name: "Событийный",
@@ -34,7 +34,7 @@ const LANDING_TYPES = [
   {
     name: "Под рекламу",
     text:
-      "Максимально короткий, 1–2 блока. Заточен под РСЯ, Google Ads и таргет. Главная метрика — стоимость заявки.",
+      "Максимально короткий, 1–2 блока. Заточен под РСЯ, Google Ads и таргет. Главная метрика - стоимость заявки.",
   },
   {
     name: "Личный бренд",
@@ -70,9 +70,9 @@ function LendingBlock() {
       <div className="mt-8 rounded-2xl border border-accent/30 bg-bg-card p-6">
         <h3 className="text-lg font-medium text-accent">Чего я не делаю</h3>
         <ul className="mt-3 space-y-2 text-base text-text-muted">
-          <li>— Не верстаю на Тильде и Wix — они подходят, но не для серьёзных проектов.</li>
-          <li>— Не беру задачи «сделать как у конкурента, но другого цвета» — без своего смысла лендинг не работает.</li>
-          <li>— Не делаю лендинги в одну ночь за 5 000 ₽ — это не про меня, ищите фрилансера-новичка.</li>
+          <li>- Не верстаю на Тильде и Wix - они подходят, но не для серьёзных проектов.</li>
+          <li>- Не беру задачи «сделать как у конкурента, но другого цвета» - без своего смысла лендинг не работает.</li>
+          <li>- Не делаю лендинги в одну ночь за 5 000 ₽ - это не про меня, ищите фрилансера-новичка.</li>
         </ul>
       </div>
     </section>
@@ -103,7 +103,7 @@ function ShopBlock() {
         Платежи, доставка, <span className="text-accent">1С</span>
       </h2>
       <p className="mt-4 max-w-2xl text-base text-text-muted">
-        Из коробки подключаю все популярные сервисы. Если нужного нет в списке —
+        Из коробки подключаю все популярные сервисы. Если нужного нет в списке -
         интегрирую через REST API или вебхуки.
       </p>
       <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -133,14 +133,14 @@ function ShopBlock() {
         </h3>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
           <div>
-            <div className="text-base font-medium">Next.js + Node.js — для роста</div>
+            <div className="text-base font-medium">Next.js + Node.js - для роста</div>
             <p className="mt-2 text-sm text-text-muted">
               Если планируете десятки тысяч SKU, B2B-ценообразование, программу лояльности
               или мобильное приложение. Гибче, быстрее на больших каталогах. От 200 000 ₽.
             </p>
           </div>
           <div>
-            <div className="text-base font-medium">WordPress + WooCommerce — для старта</div>
+            <div className="text-base font-medium">WordPress + WooCommerce - для старта</div>
             <p className="mt-2 text-sm text-text-muted">
               Если магазин типовой, до 1 000 SKU, и нужна привычная админка для контент-менеджера.
               Дешевле и быстрее запустить. От 120 000 ₽.
@@ -188,7 +188,7 @@ function BotBlock() {
         Сценарии <span className="text-accent">ботов</span>
       </h2>
       <p className="mt-4 max-w-2xl text-base text-text-muted">
-        Под каждый сценарий — своя архитектура. Иногда хватает простого
+        Под каждый сценарий - своя архитектура. Иногда хватает простого
         ответчика, иногда нужна воронка с состояниями и базой.
       </p>
       <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -211,10 +211,10 @@ function BotBlock() {
       <div className="mt-8 rounded-2xl border border-text/5 bg-bg-card p-6">
         <h3 className="text-base font-medium">На чём пишу</h3>
         <p className="mt-2 text-sm text-text-muted">
-          <strong className="text-text">Node.js + grammY</strong> — основной стек,
+          <strong className="text-text">Node.js + grammY</strong> - основной стек,
           если проект уже на Node, нужна типизация TypeScript и хорошая
           интеграция с фронтом.{" "}
-          <strong className="text-text">Python + aiogram</strong> — если на
+          <strong className="text-text">Python + aiogram</strong> - если на
           бэкенде Python, нужны ML-фичи (классификация запросов, embeddings) или
           интеграция с pandas/числами.
         </p>
@@ -243,7 +243,7 @@ function CrmBlock() {
         Подключаю <span className="text-accent">любую CRM</span> с API
       </h2>
       <p className="mt-4 max-w-2xl text-base text-text-muted">
-        Не привязан к одной системе. Беру ту, в которой работает ваша команда —
+        Не привязан к одной системе. Беру ту, в которой работает ваша команда -
         и научу её разговаривать с сайтом.
       </p>
       <div className="mt-8 overflow-hidden rounded-2xl border border-text/5">
@@ -270,14 +270,14 @@ function CrmBlock() {
       <div className="mt-8 rounded-2xl border border-accent/30 bg-bg-card p-6">
         <h3 className="text-base font-medium">Что обычно передаю в CRM из сайта</h3>
         <ul className="mt-3 grid gap-2 text-sm text-text-muted md:grid-cols-2">
-          <li>— Имя, контакт (email/телефон/Telegram)</li>
-          <li>— Текст сообщения, источник формы (главная / попап / лендинг)</li>
-          <li>— UTM-метки (source, medium, campaign, content, term)</li>
-          <li>— Реферер и страница входа</li>
-          <li>— ClientID Яндекс.Метрики и Google Analytics</li>
-          <li>— Геолокация по IP (при необходимости)</li>
-          <li>— Привязка к ответственному менеджеру (round-robin / по правилам)</li>
-          <li>— Дубликат-чек по контакту за 7 дней</li>
+          <li>- Имя, контакт (email/телефон/Telegram)</li>
+          <li>- Текст сообщения, источник формы (главная / попап / лендинг)</li>
+          <li>- UTM-метки (source, medium, campaign, content, term)</li>
+          <li>- Реферер и страница входа</li>
+          <li>- ClientID Яндекс.Метрики и Google Analytics</li>
+          <li>- Геолокация по IP (при необходимости)</li>
+          <li>- Привязка к ответственному менеджеру (round-robin / по правилам)</li>
+          <li>- Дубликат-чек по контакту за 7 дней</li>
         </ul>
       </div>
     </section>

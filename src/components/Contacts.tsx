@@ -64,7 +64,7 @@ export default function Contacts(p: Props) {
               Напишите <span className="text-accent">мне</span>
             </h3>
             <p className="mt-4 max-w-md text-base text-text-muted">
-              Расскажите о задаче — отвечу в течение дня.
+              Расскажите о задаче - отвечу в течение дня.
             </p>
           </div>
           <div className="md:col-span-7">
