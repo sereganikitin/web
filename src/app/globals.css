@@ -298,9 +298,16 @@ body {
   }
 }
 @media (hover: none) {
-  /* Тач: оборот недоступен, прячем заднюю сторону. */
+  /* Тач: оборот недоступен, прячем заднюю сторону.
+     Убираем perspective/transform-style полностью: иначе под backdrop-blur
+     заголовка карточка получает свой composition-слой и дрожит при scroll. */
+  .flip-card {
+    perspective: none;
+  }
   .flip-card-inner {
+    transform: none;
     transform-style: flat;
+    transition: none;
   }
   .flip-card-back {
     display: none;

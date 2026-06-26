@@ -47,7 +47,8 @@ export default function Hero({
                 <div className="mb-10 animate-fade-in-up">
                   <span className="inline-flex items-center gap-2 rounded-full border border-text/10 bg-bg-card/60 px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-text-muted backdrop-blur">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_2px_rgba(206,179,137,0.6)]" />
-                    {eyebrow}
+                    <span className="md:hidden">Веб-разработчик</span>
+                    <span className="hidden md:inline">{eyebrow}</span>
                   </span>
                 </div>
               )}
@@ -91,7 +92,7 @@ export default function Hero({
         </div>
 
         {/* KPI на всю ширину */}
-        <div className="mt-16 grid grid-cols-2 gap-y-6 border-t border-text/5 pt-8 md:mt-20 md:grid-cols-4">
+        <div className="mt-6 grid grid-cols-2 gap-y-6 border-t border-text/5 pt-6 md:mt-20 md:grid-cols-4 md:pt-8">
           {KPI.map((k) => (
             <div key={k.label}>
               <div className="text-[10px] uppercase tracking-[0.22em] text-text-dim">

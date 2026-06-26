@@ -31,9 +31,9 @@ export default function WorkCard({ p }: { p: PortfolioItem }) {
               {p.title}
             </div>
           )}
-          {/* Градиент-overlay + заголовок поверх фото - только на md+. */}
+          {/* Градиент-overlay + заголовок + чип поверх фото - только на md+. */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-3/5 bg-gradient-to-t from-bg via-bg/80 to-transparent md:block" />
-          <div className="absolute inset-x-0 bottom-0 hidden items-end p-6 md:flex">
+          <div className="absolute inset-x-0 bottom-0 hidden items-end justify-between p-6 md:flex">
             <div>
               <div className="font-serif text-3xl leading-tight md:text-4xl">{p.title}</div>
               {p.description && (
@@ -42,15 +42,17 @@ export default function WorkCard({ p }: { p: PortfolioItem }) {
                 </div>
               )}
             </div>
-          </div>
-          {/* Чип категории - в правом нижнем углу фото, виден всегда. */}
-          <div className="absolute bottom-4 right-4 z-10 rounded-full bg-bg px-3 py-1.5 text-[10px] uppercase tracking-wider text-accent shadow-lg shadow-black/40">
-            {p.category}
+            <div className="shrink-0 rounded-full bg-bg px-3 py-1.5 text-[10px] uppercase tracking-wider text-accent shadow-lg shadow-black/40">
+              {p.category}
+            </div>
           </div>
         </div>
-        {/* Мобайл: заголовок под фото, мельче; описание скрыто. */}
-        <div className="mt-3 px-1 md:hidden">
-          <div className="font-serif text-lg leading-snug">{p.title}</div>
+        {/* Мобайл: заголовок под фото + плашка категории справа от него. */}
+        <div className="mt-3 flex items-start justify-between gap-3 px-1 md:hidden">
+          <div className="font-serif text-2xl leading-tight">{p.title}</div>
+          <div className="shrink-0 self-start rounded-full bg-bg-card px-3 py-1.5 text-[10px] uppercase tracking-wider text-accent">
+            {p.category}
+          </div>
         </div>
       </Link>
       {p.link && (
