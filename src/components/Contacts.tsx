@@ -14,12 +14,12 @@ type Props = {
 
 export default function Contacts(p: Props) {
   const items = [
-    { label: "Email", value: p.email, href: p.email ? `mailto:${p.email}` : "" },
-    { label: "Телефон", value: p.phone, href: p.phone ? `tel:${p.phone.replace(/[^+\d]/g, "")}` : "" },
-    { label: "Telegram", value: p.telegram, href: p.telegram, external: true },
-    { label: "WhatsApp", value: p.whatsapp, href: p.whatsapp, external: true },
-    { label: "MAX", value: p.max, href: p.max, external: true },
-    { label: "GitHub", value: p.github, href: p.github, external: true },
+    { label: "Email",    value: p.email,    display: p.email,                href: p.email ? `mailto:${p.email}` : "" },
+    { label: "Телефон",  value: p.phone,    display: p.phone,                href: p.phone ? `tel:${p.phone.replace(/[^+\d]/g, "")}` : "" },
+    { label: "Telegram", value: p.telegram, display: "Написать в Telegram",  href: p.telegram, external: true },
+    { label: "WhatsApp", value: p.whatsapp, display: "Написать в WhatsApp",  href: p.whatsapp, external: true },
+    { label: "MAX",      value: p.max,      display: "Написать в MAX",       href: p.max,      external: true },
+    { label: "GitHub",   value: p.github,   display: "Открыть GitHub",       href: p.github,   external: true },
   ].filter((x) => x.value);
 
   return (
@@ -47,7 +47,7 @@ export default function Contacts(p: Props) {
                       <div className="text-xs uppercase tracking-wider text-text-dim">
                         {it.label}
                       </div>
-                      <div className="mt-1 text-base text-text">{it.value}</div>
+                      <div className="mt-1 text-base text-text">{it.display}</div>
                     </div>
                     <span className="flex h-9 w-9 items-center justify-center rounded-full border border-text/10 text-text-muted transition group-hover:border-accent group-hover:text-accent">
                       ↗
