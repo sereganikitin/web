@@ -10,14 +10,14 @@ const SITE_URL = process.env.SITE_URL ?? "https://cd-agency.ru";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Обо мне - Сергей Никитин, веб-разработчик в Москве",
+  title: "Обо мне - Сергей Никитин, веб-разработчик ",
   description:
-    "Сергей Никитин - веб-разработчик из Москвы. Стек: Next.js, React, TypeScript, Node.js, Python, WordPress. Создаю сайты любой сложности, Telegram-боты и интеграции с CRM.",
+    "Сергей Никитин - веб-разработчик . Стек: Next.js, React, TypeScript, Node.js, Python, WordPress. Создаю сайты любой сложности, Telegram-боты и интеграции с CRM.",
   alternates: { canonical: "/about" },
   openGraph: {
     title: "Обо мне - Сергей Никитин",
     description:
-      "Веб-разработчик из Москвы. Стек, опыт, принципы работы.",
+      "Веб-разработчик . Стек, опыт, принципы работы.",
     type: "profile",
     locale: "ru_RU",
     url: "/about",
@@ -92,7 +92,7 @@ export default function AboutPage() {
     url: `${SITE_URL}/about`,
     name: "Обо мне - Сергей Никитин",
     description:
-      "Веб-разработчик из Москвы. Стек, опыт, принципы работы, как заказать сайт.",
+      "Веб-разработчик . Стек, опыт, принципы работы, как заказать сайт.",
     inLanguage: "ru-RU",
     isPartOf: { "@id": `${SITE_URL}/#website` },
     about: { "@id": `${SITE_URL}/#person` },
@@ -175,7 +175,7 @@ export default function AboutPage() {
                 <span className="text-accent">Сергей Никитин</span>
               </h1>
               <div className="speakable mt-4 text-base text-text-muted">
-                Веб-разработчик из Москвы. Делаю сайты любой сложности,
+                Веб-разработчик . Делаю сайты любой сложности,
                 Telegram-боты и интеграции - от первой строки кода до запуска
                 и поддержки.
               </div>

@@ -12,9 +12,9 @@ type Props = {
 };
 
 const KPI = [
-  { label: "Опыт", value: "10+ лет" },
+  { label: "Опыт", value: "5+ лет" },
   { label: "Проектов", value: "30+" },
-  { label: "Локация", value: "Москва" },
+  { label: "Формат", value: "Под ключ" },
   { label: "Отвечу", value: "за день" },
 ];
 

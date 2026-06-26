@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Работы - портфолио веб-разработчика Сергея Никитина",
   description:
-    "Все мои проекты: сайты, интернет-магазины, личные кабинеты, Telegram-боты и интеграции. Москва.",
+    "Все мои проекты: сайты, интернет-магазины, личные кабинеты, Telegram-боты и интеграции.",
   alternates: { canonical: "/portfolio" },
   openGraph: {
     title: "Работы - Сергей Никитин",

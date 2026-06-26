@@ -16,10 +16,10 @@ const YANDEX_VERIFICATION = process.env.YANDEX_VERIFICATION
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContent();
-  const title = c["site.title"] ?? "Сергей Никитин - веб-разработчик в Москве";
+  const title = c["site.title"] ?? "Сергей Никитин - веб-разработчик ";
   const description =
     c["site.description"] ??
-    "Разработка сайтов любой сложности в Москве: лендинги, визитки, корпоративные сайты, интернет-магазины, Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web.";
+    "Разработка сайтов любой сложности : лендинги, визитки, корпоративные сайты, интернет-магазины, Telegram-боты. Сайты на Next.js, React, Node.js, Python. Интеграции с CRM. Полный спектр услуг по web.";
   return {
     title,
     description,
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       "разработка сайтов",
       "веб-разработка",
       "веб-разработчик",
-      "веб-разработчик в Москве",
+      "веб-разработчик ",
       "создание сайтов",
       "сайты любой сложности",
       "полный спектр услуг по web",

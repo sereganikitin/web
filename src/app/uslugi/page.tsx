@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Услуги - разработка сайтов, Telegram-ботов и интеграций | Сергей Никитин",
   description:
-    "Полный спектр услуг по web: разработка сайтов любой сложности, интернет-магазины, лендинги, Telegram-боты, интеграция с CRM. Москва. От 15 000 ₽.",
+    "Полный спектр услуг по web: разработка сайтов любой сложности, интернет-магазины, лендинги, Telegram-боты, интеграция с CRM. Без лишней бюрократии - быстро, под ключ.",
   alternates: { canonical: "/uslugi" },
   openGraph: {
     title: "Услуги - Сергей Никитин",
@@ -38,7 +38,7 @@ export default function UslugiIndex() {
           <p className="mt-6 max-w-2xl text-base text-text-muted">
             Полный спектр услуг по web - от лендингов до крупных интернет-магазинов
             и Telegram-ботов. Работаю с современным стеком (Next.js, React, Node.js,
-            Python) и любыми CRM. Москва.
+            Python) и любыми CRM. Без лишней бюрократии - быстро, под ключ.
           </p>
 
           <div className="mt-12 grid gap-4 md:grid-cols-2">
