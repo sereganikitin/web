@@ -8,4 +8,6 @@ export const LEGAL = {
   email: "hello@cd-agency.ru",
   site: "https://cd-agency.ru",
   city: "Москва",
+  postalCode: "121087",
+  streetAddress: "Москва",
 } as const;

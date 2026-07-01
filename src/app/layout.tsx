@@ -199,7 +199,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ].filter((v): v is string => Boolean(v && /^https?:\/\//.test(v))),
     email: c["contacts.email"] ? `mailto:${c["contacts.email"]}` : undefined,
     telephone: LEGAL.phone,
-    address: { "@type": "PostalAddress", addressLocality: LEGAL.city, addressCountry: "RU" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: LEGAL.streetAddress,
+      addressLocality: LEGAL.city,
+      postalCode: LEGAL.postalCode,
+      addressCountry: "RU",
+    },
     workLocation: { "@type": "Place", name: LEGAL.city },
     knowsAbout: [
       "Веб-разработка",
@@ -253,7 +259,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     telephone: LEGAL.phone,
     email: LEGAL.email,
     priceRange: "₽₽",
-    address: { "@type": "PostalAddress", addressLocality: LEGAL.city, addressCountry: "RU" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: LEGAL.streetAddress,
+      addressLocality: LEGAL.city,
+      postalCode: LEGAL.postalCode,
+      addressCountry: "RU",
+    },
     areaServed: [
       { "@type": "City", name: LEGAL.city },
       { "@type": "Country", name: "Россия" },
