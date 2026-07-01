@@ -13,6 +13,9 @@ const YANDEX_METRIKA_ID = 109261322;
 const YANDEX_VERIFICATION = process.env.YANDEX_VERIFICATION
   ? process.env.YANDEX_VERIFICATION.split(",").map((s) => s.trim()).filter(Boolean)
   : ["3f63f85a4c74acd0"];
+// Google Search Console: код верификации из HTML-тега.
+// Задаётся через GOOGLE_SITE_VERIFICATION в .env.
+const GOOGLE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION?.trim() || undefined;
 
 export async function generateMetadata(): Promise<Metadata> {
   const c = getContent();
@@ -73,9 +76,12 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
     authors: [{ name: "Сергей Никитин" }],
     creator: "Сергей Никитин",
-    verification: YANDEX_VERIFICATION.length
-      ? { yandex: YANDEX_VERIFICATION.length === 1 ? YANDEX_VERIFICATION[0] : YANDEX_VERIFICATION }
-      : undefined,
+    verification: {
+      ...(YANDEX_VERIFICATION.length && {
+        yandex: YANDEX_VERIFICATION.length === 1 ? YANDEX_VERIFICATION[0] : YANDEX_VERIFICATION,
+      }),
+      ...(GOOGLE_VERIFICATION && { google: GOOGLE_VERIFICATION }),
+    },
     openGraph: {
       title,
       description,
