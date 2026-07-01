@@ -136,14 +136,14 @@ function ShopBlock() {
             <div className="text-base font-medium">Next.js + Node.js - для роста</div>
             <p className="mt-2 text-sm text-text-muted">
               Если планируете десятки тысяч SKU, B2B-ценообразование, программу лояльности
-              или мобильное приложение. Гибче, быстрее на больших каталогах. От 250 000 ₽.
+              или мобильное приложение. Гибче, быстрее на больших каталогах. От 200 000 ₽.
             </p>
           </div>
           <div>
             <div className="text-base font-medium">WordPress + WooCommerce - для старта</div>
             <p className="mt-2 text-sm text-text-muted">
               Если магазин типовой, до 1 000 SKU, и нужна привычная админка для контент-менеджера.
-              Дешевле и быстрее запустить. От 180 000 ₽.
+              Дешевле и быстрее запустить. От 150 000 ₽.
             </p>
           </div>
         </div>
@@ -159,25 +159,25 @@ const BOT_SCENARIOS = [
     name: "Заявки и уведомления",
     text:
       "Принимает форму с сайта или прямо в чате, шлёт менеджеру в Telegram-группу. Защита от спама, логи в админке.",
-    techHint: "node + grammY · 1 неделя · от 25 000 ₽",
+    techHint: "node + grammY · 1 неделя · от 20 000 ₽",
   },
   {
     name: "Продажи с оплатой",
     text:
       "Воронка: каталог → товар → корзина → доставка → ЮKassa в чате → подтверждение. Кнопки и inline-меню.",
-    techHint: "node/python + ЮKassa · 3-4 недели · от 150 000 ₽",
+    techHint: "node/python + ЮKassa · 3-4 недели · от 120 000 ₽",
   },
   {
     name: "FAQ и поддержка",
     text:
       "Отвечает по сценарию, передаёт сложные вопросы оператору. Тикеты, шаблоны ответов, статусы.",
-    techHint: "python + aiogram · 2 недели · от 70 000 ₽",
+    techHint: "python + aiogram · 2 недели · от 55 000 ₽",
   },
   {
     name: "Внутренний бот команды",
     text:
       "Отчёты, тайм-трекинг, отпуска, согласования. Интеграция с Google Sheets, Notion, 1С:Зарплата.",
-    techHint: "node + REST/webhooks · 2-3 недели · от 100 000 ₽",
+    techHint: "node + REST/webhooks · 2-3 недели · от 80 000 ₽",
   },
 ];
 
